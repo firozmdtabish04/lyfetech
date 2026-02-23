@@ -1,104 +1,220 @@
 import { useState } from "react";
 import MenuItems from "../../../config/MenuItems";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import logo from "../../../assets/image.png";
 
 export default function Navbar() {
   const location = useLocation();
-  const [open, setOpen] = useState(false);
+
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileDropdown, setMobileDropdown] = useState(false);
+
+  // Check active route
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-[#020617] text-white border-b border-slate-800 sticky top-0 z-50">
-      {/* Main container */}
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-            lyfetech
-          </span>
-        </Link>
+    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      {/* Container */}
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Navbar Row */}
+        <div className="flex items-center justify-between h-20 lg:h-24">
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-14 lg:h-20 object-contain"
+            />
+          </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
-          {MenuItems.map((item, index) => {
-            const Icon = item.icon;
-            const active = location.pathname === item.path;
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center space-x-10">
+            {MenuItems.map((item, index) => {
+              // Dropdown Menu
+              if (item.children) {
+                const dropdownActive = item.children.some(
+                  (child) => location.pathname === child.path,
+                );
 
-            return (
-              <Link
-                key={index}
-                to={item.path}
-                className="relative flex items-center gap-2 group"
-              >
-                <Icon
-                  size={18}
-                  className={`transition ${
-                    active
-                      ? "text-blue-400"
-                      : "text-slate-400 group-hover:text-blue-400"
-                  }`}
-                />
+                return (
+                  <div key={index} className="relative group ">
+                    {/* Parent */}
+                    <div
+                      className={`
+                      flex items-center gap-1 cursor-pointer
+                      font-semibold text-[16px]
+                      ${
+                        dropdownActive
+                          ? "text-orange-500"
+                          : "text-gray-800 hover:text-orange-500"
+                      }
+                    `}
+                    >
+                      {item.name}
 
-                <span
-                  className={`transition font-medium ${
-                    active
-                      ? "text-blue-400"
-                      : "text-slate-300 group-hover:text-white"
-                  }`}
-                >
-                  {item.name}
-                </span>
+                      <ChevronDown size={16} />
+                    </div>
 
-                {/* underline */}
-                <span
-                  className={`
-                    absolute left-0 -bottom-2 h-[2px] bg-blue-400 transition-all duration-300
-                    ${active ? "w-full" : "w-0 group-hover:w-full"}
+                    {/* Active underline */}
+                    <span
+                      className={`
+                      absolute left-0 -bottom-2 h-[2px] bg-orange-500
+                      transition-all duration-300
+                      ${dropdownActive ? "w-full" : "w-0 group-hover:w-full"}
+                    `}
+                    />
+
+                    {/* Dropdown */}
+                    <div
+                      className="
+                      absolute left-0 top-full 
+                      w-56
+                      bg-white border rounded-lg shadow-lg
+                      opacity-0 invisible
+                      group-hover:opacity-100 group-hover:visible
+                      transition duration-200
+                    "
+                    >
+                      {item.children.map((child, i) => (
+                        <Link
+                          key={i}
+                          to={child.path}
+                          className={`
+                            block px-5 py-3 font-medium
+                            ${
+                              isActive(child.path)
+                                ? "text-orange-500 bg-orange-50"
+                                : "text-gray-700 hover:bg-orange-50 hover:text-orange-500"
+                            }
+                          `}
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+
+              // Normal Link
+              return (
+                <Link key={index} to={item.path} className="relative group">
+                  <span
+                    className={`
+                    font-semibold text-[16px]
+                    transition duration-300
+                    ${
+                      isActive(item.path)
+                        ? "text-orange-500"
+                        : "text-gray-800 hover:text-orange-500"
+                    }
                   `}
-                />
-              </Link>
-            );
-          })}
-        </div>
+                  >
+                    {item.name}
+                  </span>
 
-        {/* Mobile Button */}
-        <button
-          className="md:hidden text-slate-300"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <X size={26} /> : <Menu size={26} />}
-        </button>
+                  {/* Underline */}
+                  <span
+                    className={`
+                    absolute left-0 -bottom-2 h-[2px] bg-orange-500
+                    transition-all duration-300
+                    ${isActive(item.path) ? "w-full" : "w-0 group-hover:w-full"}
+                  `}
+                  />
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Right Section */}
+          <div className="flex items-center gap-4">
+            {/* Phone */}
+            <div className="hidden lg:flex items-center gap-2">
+              <Phone size={18} className="text-orange-500" />
+
+              <span className="font-semibold text-sm text-gray-700">
+                +91 98765 43210
+              </span>
+            </div>
+
+            {/* Button */}
+            <button
+              className="
+              bg-orange-500 hover:bg-orange-600
+              text-white px-6 py-2.5 rounded-full
+              font-semibold text-sm
+              transition duration-300
+            "
+            >
+              Get Estimate
+            </button>
+
+            {/* Hamburger */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden w-12 h-12 flex items-center justify-center"
+            >
+              {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`
-          md:hidden bg-slate-900 transition-all duration-300 overflow-hidden
-          ${open ? "max-h-[400px]" : "max-h-0"}
-        `}
-      >
-        {MenuItems.map((item, index) => {
-          const Icon = item.icon;
-          const active = location.pathname === item.path;
+      {mobileOpen && (
+        <div className="lg:hidden bg-white border-t">
+          {MenuItems.map((item, index) => (
+            <div key={index}>
+              {!item.children ? (
+                <Link
+                  to={item.path}
+                  onClick={() => setMobileOpen(false)}
+                  className={`
+                    block px-6 py-4 border-b font-semibold
+                    ${
+                      isActive(item.path)
+                        ? "text-orange-500 bg-orange-50"
+                        : "text-gray-800"
+                    }
+                  `}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <>
+                  <div
+                    onClick={() => setMobileDropdown(!mobileDropdown)}
+                    className="px-6 py-4 font-semibold border-b cursor-pointer flex justify-between"
+                  >
+                    {item.name}
+                    <ChevronDown size={18} />
+                  </div>
 
-          return (
-            <Link
-              key={index}
-              to={item.path}
-              onClick={() => setOpen(false)}
-              className={`flex items-center gap-3 px-6 py-4 border-b border-slate-800
-              ${
-                active
-                  ? "text-blue-400 bg-slate-800"
-                  : "text-slate-300 hover:bg-slate-800 hover:text-white"
-              }`}
-            >
-              <Icon size={18} />
-              {item.name}
-            </Link>
-          );
-        })}
-      </div>
+                  {mobileDropdown &&
+                    item.children.map((child, i) => (
+                      <Link
+                        key={i}
+                        to={child.path}
+                        onClick={() => setMobileOpen(false)}
+                        className={`
+                        block pl-10 py-3 border-b font-medium
+                        ${
+                          isActive(child.path)
+                            ? "text-orange-500 bg-orange-50"
+                            : "text-gray-700"
+                        }
+                      `}
+                      >
+                        {child.name}
+                      </Link>
+                    ))}
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
