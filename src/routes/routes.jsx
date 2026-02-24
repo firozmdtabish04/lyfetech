@@ -8,9 +8,6 @@ import Profile from "../pages/profile/Profile";
 import Services from "../pages/service/Services";
 import OfficeBearers from "../pages/officebearers/officebearers";
 import Projects from "../pages/projects/Projects";
-import ProjectDetails from "../pages/projectdetail/ProjectDetails";
-import Term from "../pages/term/Term";
-import Privacy from "../pages/privacy/Privacy";
 export default function AppRoutes() {
   return (
     <Routes>
@@ -22,9 +19,6 @@ export default function AppRoutes() {
         <Route path="service" element={<Services />} />
         <Route path="OfficeBearers" element={<OfficeBearers />} />
         <Route path="projects" element={<Projects />} />
-        <Route path="project-details" element={<ProjectDetails />} />
-        <Route path="Terms" element={<Term />} />
-        <Route path="privacy" element={<Privacy />} />
       </Route>
     </Routes>
   );
