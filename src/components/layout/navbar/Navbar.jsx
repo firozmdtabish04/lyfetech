@@ -24,11 +24,19 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             {/* Logo */}
             {/* Logo */}
-            <Link to="/" className="flex items-center">
+            {/* Logo */}
+            <Link to="/" className="flex items-center shrink-0">
               <img
                 src={logo}
                 alt="LyfeTech Logo"
-                className="h-16 md:h-40 w-auto object-contain"
+                className="
+      h-40       /* mobile */
+      sm:h-40    /* small screens */
+      md:h-40    /* tablet */
+      lg:h-40   /* desktop */
+      w-auto
+      object-contain
+    "
               />
             </Link>
 
