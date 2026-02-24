@@ -11,9 +11,8 @@ export default function Footer() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">LyfeTech</h2>
 
           <p className="text-sm leading-relaxed mb-4">
-            Professional construction and electrical solutions with modern
-            technology, quality work, and trusted engineering services across
-            Odisha.
+            Professional construction and electrical solutions with modern technology, quality work,
+            and trusted engineering services across Odisha.
           </p>
 
           {/* Social Icons */}
@@ -50,9 +49,7 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            Quick Links
-          </h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
 
           <ul className="space-y-2 text-sm">
             <li>
@@ -89,52 +86,35 @@ export default function Footer() {
 
         {/* Services */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            Our Services
-          </h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Our Services</h3>
 
           <ul className="space-y-2 text-sm">
             <li>
-              <Link
-                to="/service"
-                className="hover:text-orange-500 transition-colors duration-200"
-              >
+              <Link to="/service" className="hover:text-orange-500 transition-colors duration-200">
                 Residential Building
               </Link>
             </li>
 
             <li>
-              <Link
-                to="/service"
-                className="hover:text-orange-500 transition-colors duration-200"
-              >
+              <Link to="/service" className="hover:text-orange-500 transition-colors duration-200">
                 Commercial Projects
               </Link>
             </li>
 
             <li>
-              <Link
-                to="/service"
-                className="hover:text-orange-500 transition-colors duration-200"
-              >
+              <Link to="/service" className="hover:text-orange-500 transition-colors duration-200">
                 Renovation
               </Link>
             </li>
 
             <li>
-              <Link
-                to="/service"
-                className="hover:text-orange-500 transition-colors duration-200"
-              >
+              <Link to="/service" className="hover:text-orange-500 transition-colors duration-200">
                 Infrastructure
               </Link>
             </li>
 
             <li>
-              <Link
-                to="/service"
-                className="hover:text-orange-500 transition-colors duration-200"
-              >
+              <Link to="/service" className="hover:text-orange-500 transition-colors duration-200">
                 Electrical Engineering
               </Link>
             </li>
@@ -143,9 +123,7 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            Contact Us
-          </h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Us</h3>
 
           <p className="text-sm mb-2">Bhubaneswar, Odisha, India</p>
 
@@ -161,8 +139,8 @@ export default function Footer() {
 
       {/* Bottom Footer */}
       <div className="bg-gray-200 text-center py-4 text-sm">
-        © {new Date().getFullYear()}{" "}
-        <span className="font-semibold">LyfeTech</span>. All Rights Reserved.
+        © {new Date().getFullYear()} <span className="font-semibold">LyfeTech</span>. All Rights
+        Reserved.
       </div>
     </footer>
   );

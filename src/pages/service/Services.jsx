@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Zap,
-  Building2,
-  Wrench,
-  Factory,
-  Lightbulb,
-  ShieldCheck,
-} from "lucide-react";
+import { Zap, Building2, Wrench, Factory, Lightbulb, ShieldCheck } from "lucide-react";
 
 // services data
 const services = [
@@ -138,9 +131,7 @@ export default function ServicesSection() {
               </h3>
 
               {/* description */}
-              <p className="text-gray-400 group-hover:text-gray-300 transition">
-                {service.desc}
-              </p>
+              <p className="text-gray-400 group-hover:text-gray-300 transition">{service.desc}</p>
 
               {/* underline animation */}
               <div className="mt-4 h-[2px] w-0 bg-yellow-400 group-hover:w-full transition-all duration-400"></div>

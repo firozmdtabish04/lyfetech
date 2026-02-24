@@ -22,9 +22,6 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            {/* Logo */}
-            {/* Logo */}
-            {/* Logo */}
             <Link to="/" className="flex items-center shrink-0">
               <img
                 src={logo}
@@ -60,8 +57,8 @@ export default function Navbar() {
                     flex items-center gap-1 cursor-pointer font-semibold text-[16px]
                     ${
                       isDropdownActive(item.children)
-                        ? "text-orange-500"
-                        : "text-gray-800 hover:text-orange-500"
+                        ? "text-yellow-500"
+                        : "text-gray-800 hover:text-yellow-500"
                     }
                   `}
                   >
@@ -72,12 +69,8 @@ export default function Navbar() {
                   {/* underline */}
                   <span
                     className={`
-                    absolute left-0 -bottom-2 h-[2px] bg-orange-500 transition-all duration-300
-                    ${
-                      isDropdownActive(item.children)
-                        ? "w-full"
-                        : "w-0 group-hover:w-full"
-                    }
+                    absolute left-0 -bottom-2 h-[2px] bg-yellow-500 transition-all duration-300
+                    ${isDropdownActive(item.children) ? "w-full" : "w-0 group-hover:w-full"}
                   `}
                   />
 
@@ -100,8 +93,8 @@ export default function Navbar() {
                           block px-5 py-3 font-medium
                           ${
                             isActive(child.path)
-                              ? "text-orange-500 bg-orange-50"
-                              : "text-gray-700 hover:bg-orange-50 hover:text-orange-500"
+                              ? "text-yellow-500 bg-orange-50"
+                              : "text-gray-700 hover:bg-orange-50 hover:text-yellow-500"
                           }
                         `}
                       >
@@ -117,8 +110,8 @@ export default function Navbar() {
                     font-semibold text-[16px]
                     ${
                       isActive(item.path)
-                        ? "text-orange-500"
-                        : "text-gray-800 hover:text-orange-500"
+                        ? "text-yellow-500"
+                        : "text-gray-800 hover:text-yellow-500"
                     }
                   `}
                   >
@@ -127,12 +120,12 @@ export default function Navbar() {
 
                   <span
                     className={`
-                    absolute left-0 -bottom-2 h-[2px] bg-orange-500 transition-all duration-300
+                    absolute left-0 -bottom-2 h-[2px] bg-yellow-500 transition-all duration-300
                     ${isActive(item.path) ? "w-full" : "w-0 group-hover:w-full"}
                   `}
                   />
                 </Link>
-              ),
+              )
             )}
           </div>
 
@@ -141,17 +134,15 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             {/* Phone (desktop only) */}
             <div className="hidden lg:flex items-center gap-2">
-              <Phone size={18} className="text-orange-500" />
-              <span className="font-semibold text-sm text-gray-700">
-                +91 7894298921
-              </span>
+              <Phone size={18} className="text-yellow-500 " />
+              <span className="font-semibold text-sm text-gray-700">+91 7894298921</span>
             </div>
 
             {/* Estimate Button */}
             <Link to="/contact">
               <button
                 className="
-      bg-orange-500 hover:bg-orange-600
+      bg-orange-500 hover:bg-yellow-500
       text-white
       px-4 sm:px-5
       py-2
@@ -203,7 +194,7 @@ export default function Navbar() {
               block px-4 py-3 rounded-md font-semibold transition
               ${
                 isActive(item.path)
-                  ? "text-orange-500 bg-orange-50"
+                  ? "text-yellow-500 bg-orange-50"
                   : "text-gray-800 hover:bg-gray-100"
               }
             `}
@@ -221,7 +212,7 @@ export default function Navbar() {
                   onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
                   className="flex items-center justify-between px-4 py-3 font-semibold cursor-pointer rounded-md hover:bg-gray-100 transition"
                 >
-                  <span className="text-orange-500">{item.name}</span>
+                  <span className="text-yellow-500">{item.name}</span>
 
                   <ChevronDown
                     size={18}
@@ -243,8 +234,8 @@ export default function Navbar() {
                     block px-4 py-3 font-medium transition
                     ${
                       isActive(child.path)
-                        ? "text-orange-500 bg-white"
-                        : "text-gray-700 hover:bg-white hover:text-orange-500"
+                        ? "text-yellow-500 bg-white"
+                        : "text-gray-700 hover:bg-white hover:text-yellow-500"
                     }
                   `}
                       >
