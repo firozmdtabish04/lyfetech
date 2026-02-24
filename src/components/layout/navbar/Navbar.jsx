@@ -2,7 +2,7 @@ import { useState } from "react";
 import MenuItems from "../../../config/MenuItems";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, ChevronDown, Building2 } from "lucide-react";
-import logo from "../../../assets/image.png";
+import logo from "../../../assets/image copy.png";
 
 export default function Navbar() {
   const location = useLocation();
@@ -21,17 +21,25 @@ export default function Navbar() {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 bg-orange-100 rounded-lg flex items-center justify-center">
-              <Building2 className="text-orange-500" size={20} />
-            </div>
+          <div className="flex items-center gap-3">
+            {/* Logo */}
+            {/* Logo */}
+            <Link to="/" className="flex items-center">
+              <img
+                src={logo}
+                alt="LyfeTech Logo"
+                className="h-16 md:h-40 w-auto object-contain"
+              />
+            </Link>
 
-            <img
-              src={logo}
-              alt="LyfeTech Logo"
-              className="h-16 w-auto object-contain"
-            />
-          </Link>
+            {/* Company Name */}
+            {/* <Link
+              to="/"
+              className="text-2xl font-bold tracking-wide bg-gradient-to-r from-cyan-500 to-blue-700 bg-clip-text text-transparent"
+            >
+              LYFETECH
+            </Link> */}
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-10">
