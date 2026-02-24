@@ -1,144 +1,160 @@
 import { motion } from "framer-motion";
-import { Zap, Building2, Wrench, Factory, Lightbulb, ShieldCheck } from "lucide-react";
+import { Home, Building2, Wrench, Route, ClipboardList, PencilRuler } from "lucide-react";
 
-// services data
+import serviceImage from "../../assets/Hero.png";
+
 const services = [
   {
-    icon: Zap,
-    title: "Electrical Installation",
-    desc: "Complete electrical wiring, maintenance, and industrial solutions.",
+    icon: Home,
+    title: "Residential Building",
+    desc: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur.",
     direction: "left",
   },
   {
     icon: Building2,
-    title: "Construction Projects",
-    desc: "Residential, commercial, and infrastructure construction services.",
+    title: "Commercial Projects",
+    desc: "Ut enim ad minima veniam quis nostrum exercitationem ullam corporis suscipit.",
     direction: "right",
   },
   {
     icon: Wrench,
-    title: "Maintenance & Repair",
-    desc: "Professional repair and maintenance services.",
+    title: "Renovation & Remodeling",
+    desc: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.",
     direction: "left",
   },
   {
-    icon: Factory,
-    title: "Industrial Electrical",
-    desc: "Industrial electrical system installation and automation.",
+    icon: Route,
+    title: "Road & Infrastructure",
+    desc: "Temporibus autem quibusdam et aut officiis debitis aut rerum.",
     direction: "right",
   },
   {
-    icon: Lightbulb,
-    title: "Energy Solutions",
-    desc: "Smart and energy-efficient electrical systems.",
+    icon: ClipboardList,
+    title: "Project Management",
+    desc: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
     direction: "left",
   },
   {
-    icon: ShieldCheck,
-    title: "Safety Inspection",
-    desc: "Electrical safety inspection and certification.",
+    icon: PencilRuler,
+    title: "Architecture & Design",
+    desc: "At vero eos et accusamus et iusto odio dignissimos ducimus.",
     direction: "right",
   },
 ];
 
-// container animation
-const containerVariant = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-// card animation
 const cardVariant = {
   hidden: (direction) => ({
     opacity: 0,
-    x: direction === "left" ? -80 : 80,
-    y: 40,
+    x: direction === "left" ? -40 : 40,
+    y: 20,
   }),
   visible: {
     opacity: 1,
     x: 0,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.4 },
   },
 };
 
 export default function ServicesSection() {
   return (
-    <section className="py-20 px-6 ">
-      {/* heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-3xl md:text-4xl font-bold text-center mb-16 text-yellow-400"
-      >
-        Our Services
-      </motion.h2>
+    <section className="py-20 bg-[#f8f9fa]">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800"
+        >
+          Our Services
+        </motion.h2>
 
-      {/* cards container */}
-      <motion.div
-        variants={containerVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
-      >
-        {services.map((service, index) => {
-          const Icon = service.icon;
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* LEFT IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="relative rounded-lg overflow-hidden"
+          >
+            <img src={serviceImage} className="w-full h-[480px] object-cover" alt="services" />
 
-          return (
-            <motion.div
-              key={index}
-              custom={service.direction}
-              variants={cardVariant}
-              whileHover={{
-                scale: 1.05,
-                y: -8,
-              }}
-              className="bg-slate-900 p-6 rounded-xl border border-yellow-500/20
-              hover:border-yellow-400 transition-all duration-300
-              hover:shadow-[0_15px_50px_rgba(234,179,8,0.25)]
-              group cursor-pointer"
-            >
-              {/* floating icon */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <Icon
-                  size={42}
-                  className="text-yellow-400 mb-4
-                  group-hover:scale-125 group-hover:rotate-6
-                  transition duration-300"
-                />
-              </motion.div>
-
-              {/* title */}
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-yellow-400 transition">
-                {service.title}
+            <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
+              <h3 className="text-white text-2xl font-bold mb-2">
+                We Deliver Excellence in Every Project
               </h3>
 
-              {/* description */}
-              <p className="text-gray-400 group-hover:text-gray-300 transition">{service.desc}</p>
+              <button className="text-yellow-500 font-semibold hover:translate-x-1 transition">
+                Get a Free Consultation →
+              </button>
+            </div>
+          </motion.div>
 
-              {/* underline animation */}
-              <div className="mt-4 h-[2px] w-0 bg-yellow-400 group-hover:w-full transition-all duration-400"></div>
-            </motion.div>
-          );
-        })}
-      </motion.div>
+          {/* RIGHT SIDE CARDS */}
+          <div className="grid sm:grid-cols-2 gap-6">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+
+              return (
+                <motion.div
+                  key={index}
+                  custom={service.direction}
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={cardVariant}
+                  whileHover={{ y: -4 }}
+                  className="
+                  bg-white
+                  border
+                  border-gray-200
+                  rounded-lg
+                  p-6
+                  flex
+                  items-start
+                  gap-4
+                  hover:border-yellow-500
+                  hover:shadow-md
+                  transition-all
+                  duration-300
+                  cursor-pointer
+                  group
+                  "
+                >
+                  {/* icon box */}
+                  <div
+                    className="
+                  w-20
+                  h-10
+                  flex
+                  items-center
+                  justify-center
+                  rounded-lg
+                  bg-orange-100
+                  group-hover:bg-orange-500
+                  transition
+                  "
+                  >
+                    <Icon
+                      size={25}
+                      className="
+                      text-yellow-400
+                      group-hover:text-white
+                      transition
+                      "
+                    />
+                  </div>
+
+                  {/* text */}
+                  <div>
+                    <h3 className="font-semibold text-gray-800 mb-1">{service.title}</h3>
+
+                    <p className="text-sm text-gray-500 leading-relaxed">{service.desc}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
