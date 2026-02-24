@@ -1,96 +1,103 @@
 import { useState } from "react";
 import MenuItems from "../../../config/MenuItems";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, ChevronDown, Building2 } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import logo from "../../../assets/image copy.png";
 
 export default function Navbar() {
   const location = useLocation();
 
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
 
   const isActive = (path) => location.pathname === path;
 
   const isDropdownActive = (children) =>
     children?.some((child) => child.path === location.pathname);
 
+  const toggleDropdown = (index) => {
+    setMobileDropdownOpen(mobileDropdownOpen === index ? null : index);
+  };
+
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       {/* Container */}
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center gap-3">
+      <div className="max-w-[1280px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        {/* Navbar row */}
+        <div
+          className="
+  flex items-center justify-between
+  h-[60px]
+  sm:h-[65px]
+  md:h-[70px]
+  lg:h-[75px]
+"
+        >
+          {/* LEFT: Logo (unchanged image) */}
+          <div className="flex items-center gap-3 flex-shrink-0">
             <Link to="/" className="flex items-center shrink-0">
               <img
                 src={logo}
                 alt="LyfeTech Logo"
                 className="
-      h-40       /* mobile */
-      sm:h-40    /* small screens */
-      md:h-40    /* tablet */
-      lg:h-40   /* desktop */
-      w-auto
-      object-contain
-    "
+                mt-6
+                  h-40
+                  sm:h-40
+                  md:h-40
+                  lg:h-40
+                  w-auto
+                  object-contain
+                  max-w-[160px]
+                  sm:max-w-[180px]
+                  md:max-w-[200px]
+                  lg:max-w-[220px]
+                "
               />
             </Link>
-
-            {/* Company Name */}
-            {/* <Link
-              to="/"
-              className="text-2xl font-bold tracking-wide bg-gradient-to-r from-cyan-500 to-blue-700 bg-clip-text text-transparent"
-            >
-              LYFETECH
-            </Link> */}
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-10">
+          {/* CENTER: Desktop Menu */}
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-10 flex-shrink-0">
             {MenuItems.map((item, index) =>
               item.children ? (
                 <div key={index} className="relative group">
-                  {/* Parent */}
                   <div
                     className={`
-                    flex items-center gap-1 cursor-pointer font-semibold text-[16px]
-                    ${
-                      isDropdownActive(item.children)
-                        ? "text-yellow-500"
-                        : "text-gray-800 hover:text-yellow-500"
-                    }
-                  `}
+                      flex items-center gap-1 cursor-pointer font-semibold text-[15px] xl:text-[16px]
+                      ${
+                        isDropdownActive(item.children)
+                          ? "text-yellow-500"
+                          : "text-gray-800 hover:text-yellow-500"
+                      }
+                    `}
                   >
                     {item.name}
                     <ChevronDown size={16} />
                   </div>
 
-                  {/* underline */}
                   <span
                     className={`
-                    absolute left-0 -bottom-2 h-[2px] bg-yellow-500 transition-all duration-300
-                    ${isDropdownActive(item.children) ? "w-full" : "w-0 group-hover:w-full"}
-                  `}
+                      absolute left-0 -bottom-1 h-[2px] bg-yellow-500 transition-all duration-300
+                      ${isDropdownActive(item.children) ? "w-full" : "w-0 group-hover:w-full"}
+                    `}
                   />
 
-                  {/* Dropdown */}
                   <div
                     className="
-                    absolute left-0 top-full
-                    w-56
-                    bg-white border rounded-lg shadow-lg
-                    opacity-0 invisible
-                    group-hover:opacity-100 group-hover:visible
-                    transition duration-200 z-50
-                  "
+                      absolute left-0 top-full mt-2
+                      w-56 bg-white border rounded-lg shadow-lg
+                      opacity-0 invisible
+                      group-hover:opacity-100 group-hover:visible
+                      transition duration-200
+                      z-50
+                    "
                   >
                     {item.children.map((child, i) => (
                       <Link
                         key={i}
                         to={child.path}
                         className={`
-                          block px-5 py-3 font-medium
+                          block px-5 py-3 font-medium text-sm
                           ${
                             isActive(child.path)
                               ? "text-yellow-500 bg-orange-50"
@@ -107,34 +114,33 @@ export default function Navbar() {
                 <Link key={index} to={item.path} className="relative group">
                   <span
                     className={`
-                    font-semibold text-[16px]
-                    ${
-                      isActive(item.path)
-                        ? "text-yellow-500"
-                        : "text-gray-800 hover:text-yellow-500"
-                    }
-                  `}
+                      font-semibold text-[15px] xl:text-[16px]
+                      ${
+                        isActive(item.path)
+                          ? "text-yellow-500"
+                          : "text-gray-800 hover:text-yellow-500"
+                      }
+                    `}
                   >
                     {item.name}
                   </span>
 
                   <span
                     className={`
-                    absolute left-0 -bottom-2 h-[2px] bg-yellow-500 transition-all duration-300
-                    ${isActive(item.path) ? "w-full" : "w-0 group-hover:w-full"}
-                  `}
+                      absolute left-0 -bottom-1 h-[2px] bg-yellow-500 transition-all duration-300
+                      ${isActive(item.path) ? "w-full" : "w-0 group-hover:w-full"}
+                    `}
                   />
                 </Link>
               )
             )}
           </div>
 
-          {/* Right Section */}
-          {/* Right Section */}
-          <div className="flex items-center gap-3">
-            {/* Phone (desktop only) */}
-            <div className="hidden lg:flex items-center gap-2">
-              <Phone size={18} className="text-yellow-500 " />
+          {/* RIGHT Section */}
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+            {/* Phone */}
+            <div className="hidden xl:flex items-center gap-2 whitespace-nowrap">
+              <Phone size={18} className="text-yellow-500" />
               <span className="font-semibold text-sm text-gray-700">+91 7894298921</span>
             </div>
 
@@ -142,16 +148,16 @@ export default function Navbar() {
             <Link to="/contact">
               <button
                 className="
-      bg-orange-500 hover:bg-yellow-500
-      text-white
-      px-4 sm:px-5
-      py-2
-      rounded-full
-      font-semibold
-      text-sm
-      transition duration-300
-      whitespace-nowrap
-      "
+                  bg-orange-500 hover:bg-yellow-500
+                  text-white
+                  px-3 sm:px-4 lg:px-5
+                  py-1.5 sm:py-2
+                  rounded-full
+                  font-semibold
+                  text-xs sm:text-sm
+                  transition
+                  whitespace-nowrap
+                "
               >
                 Get Estimate
               </button>
@@ -161,28 +167,23 @@ export default function Navbar() {
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="
-      lg:hidden
-      flex items-center justify-center
-      w-10 h-10
-      rounded-md
-      hover:bg-gray-100
-      transition
-      flex-shrink-0
-    "
+                lg:hidden
+                flex items-center justify-center
+                w-9 h-9 sm:w-10 sm:h-10
+                rounded-md
+                text-black
+                flex-shrink-0
+              "
             >
-              {mobileOpen ? (
-                <X size={26} className="text-gray-800" />
-              ) : (
-                <Menu size={26} className="text-gray-800" />
-              )}
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (unchanged logic) */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t px-4 py-3 space-y-1">
+        <div className="lg:hidden bg-white border-t">
           {MenuItems.map((item, index) => {
             if (!item.children) {
               return (
@@ -191,53 +192,48 @@ export default function Navbar() {
                   to={item.path}
                   onClick={() => setMobileOpen(false)}
                   className={`
-              block px-4 py-3 rounded-md font-semibold transition
-              ${
-                isActive(item.path)
-                  ? "text-yellow-500 bg-orange-50"
-                  : "text-gray-800 hover:bg-gray-100"
-              }
-            `}
+                    block px-5 py-3 font-semibold text-sm
+                    ${
+                      isActive(item.path)
+                        ? "text-yellow-500 bg-orange-50"
+                        : "text-gray-800 hover:bg-gray-100"
+                    }
+                  `}
                 >
                   {item.name}
                 </Link>
               );
             }
 
-            // Dropdown item
             return (
               <div key={index}>
-                {/* Parent */}
                 <div
-                  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-                  className="flex items-center justify-between px-4 py-3 font-semibold cursor-pointer rounded-md hover:bg-gray-100 transition"
+                  onClick={() => toggleDropdown(index)}
+                  className="flex items-center justify-between px-5 py-3 font-semibold cursor-pointer hover:bg-gray-100"
                 >
-                  <span className="text-yellow-500">{item.name}</span>
+                  <span>{item.name}</span>
 
                   <ChevronDown
                     size={18}
-                    className={`transition-transform duration-300 ${
-                      mobileDropdownOpen ? "rotate-180" : ""
-                    }`}
+                    className={`transition ${mobileDropdownOpen === index ? "rotate-180" : ""}`}
                   />
                 </div>
 
-                {/* Dropdown box */}
-                {mobileDropdownOpen && (
-                  <div className="ml-3 mt-2 bg-orange-50 rounded-lg border border-orange-100 overflow-hidden">
+                {mobileDropdownOpen === index && (
+                  <div className="bg-orange-50">
                     {item.children.map((child, i) => (
                       <Link
                         key={i}
                         to={child.path}
                         onClick={() => setMobileOpen(false)}
                         className={`
-                    block px-4 py-3 font-medium transition
-                    ${
-                      isActive(child.path)
-                        ? "text-yellow-500 bg-white"
-                        : "text-gray-700 hover:bg-white hover:text-yellow-500"
-                    }
-                  `}
+                          block px-8 py-3 text-sm
+                          ${
+                            isActive(child.path)
+                              ? "text-yellow-500 bg-white"
+                              : "text-gray-700 hover:bg-white"
+                          }
+                        `}
                       >
                         {child.name}
                       </Link>
