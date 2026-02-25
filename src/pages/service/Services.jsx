@@ -122,7 +122,7 @@ export default function ServicesSection() {
                   {/* icon box */}
                   <div
                     className="
-                  w-12
+                  w-24
                   h-12
                   flex
                   items-center
