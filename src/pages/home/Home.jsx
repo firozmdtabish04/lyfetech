@@ -1,7 +1,6 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Instagram, Linkedin, Github, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 
@@ -11,13 +10,7 @@ import "swiper/css/effect-fade";
 import hero1 from "../../assets/image copy 3.png";
 import hero2 from "../../assets/image copy 2.png";
 import hero3 from "../../assets/Hero.png";
-
-import About from "../about/About";
-
-import Services from "../service/Services";
-import Project from "../projects/Projects";
-import Team from "../officebearers/officebearers";
-import Contact from "../contact/Contact";
+import centerImage from "../../assets/Tabish.jpg";
 
 export default function Home() {
   const slides = [
@@ -47,9 +40,7 @@ export default function Home() {
   const container = {
     hidden: {},
     show: {
-      transition: {
-        staggerChildren: 0.25,
-      },
+      transition: { staggerChildren: 0.25 },
     },
   };
 
@@ -58,78 +49,92 @@ export default function Home() {
     show: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.2,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.5 },
     },
   };
 
+  const marqueeText =
+    "🚧 Welcome to LYFETECH Odisha Projects Pvt. Ltd. | Trusted Construction & Electrical Partner | Quality • Safety • Innovation 🚧";
+
   return (
-    <div className="text-white">
-      {/* HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <div className="text-white overflow-hidden">
+      {/* MARQUEE */}
+      <div className="bg-yellow-500 text-black py-2 overflow-hidden">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {[...Array(8)].map((_, i) => (
+            <span key={i} className="px-6 font-semibold text-sm sm:text-base">
+              {marqueeText}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* HERO */}
+      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center">
         {/* SLIDER */}
         <Swiper
           modules={[Autoplay, EffectFade]}
           effect="fade"
-          loop={true}
+          loop
           speed={1200}
           autoplay={{
-            delay: 2000,
+            delay: 3000,
             disableOnInteraction: false,
           }}
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0"
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-              {/* Background Image */}
               <img
                 src={slide.image}
-                alt="Construction"
                 className="absolute inset-0 w-full h-full object-cover"
+                alt=""
               />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/70"></div>
+              <div className="absolute inset-0 bg-black/70" />
 
-              {/* Animated Content */}
-              <div className="relative z-20 max-w-7xl mx-auto px-6 py-16 min-h-[90vh] flex items-center">
+              <div
+                className="
+                relative z-20
+                max-w-7xl mx-auto
+                px-4 sm:px-6 lg:px-8
+                min-h-[85vh] md:min-h-[90vh]
+                flex items-center
+                pb-40 md:pb-0
+              "
+              >
                 <motion.div
                   variants={container}
                   initial="hidden"
                   animate="show"
-                  className="max-w-3xl"
+                  className="max-w-xl lg:max-w-2xl"
                 >
-                  {/* Tag */}
                   <motion.div
                     variants={item}
-                    className="inline-block bg-white/10 px-4 py-2 rounded mb-4 text-sm backdrop-blur-sm"
+                    className="inline-block bg-white/10 px-4 py-2 rounded mb-4 text-sm"
                   >
                     {slide.tag}
                   </motion.div>
 
-                  {/* Title */}
                   <motion.h1
                     variants={item}
-                    className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
+                    className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
                   >
-                    {slide.title} <span className="text-yellow-400">{slide.highlight}</span>
+                    {slide.title}
+                    <span className="text-yellow-400 block sm:inline"> {slide.highlight}</span>
                   </motion.h1>
 
-                  {/* Description */}
                   <motion.p
                     variants={item}
-                    className="mt-6 text-gray-300 max-w-xl text-base sm:text-lg"
+                    className="mt-4 sm:mt-6 text-gray-300 text-sm sm:text-base md:text-lg max-w-lg"
                   >
                     {slide.desc}
                   </motion.p>
 
-                  {/* Button */}
-                  <motion.div variants={item} className="mt-8">
+                  <motion.div variants={item} className="mt-2 sm:mt-8">
                     <Link
                       to="/projects"
-                      className="bg-yellow-500 hover:bg-yellow-400 text-black px-6 py-3 rounded font-semibold transition duration-300 inline-flex items-center gap-2"
+                      className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded font-semibold inline-flex items-center gap-4 transition"
                     >
                       Explore Our Projects
                       <ArrowRight size={18} />
@@ -140,40 +145,97 @@ export default function Home() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </section>
 
-      {/* STATS */}
-      <section className="bg-yellow-500 text-black py-10">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <h3 className="text-3xl md:text-4xl font-bold">5+</h3>
-            <p>Years Experience</p>
-          </div>
+        {/* PROFILE IMAGE */}
+        <div
+          className="
+          absolute z-30 pointer-events-none
 
-          <div>
-            <h3 className="text-3xl md:text-4xl font-bold">50+</h3>
-            <p>Projects Completed</p>
-          </div>
+          bottom-6
+          left-1/2
+          -translate-x-1/2
 
-          <div>
-            <h3 className="text-3xl md:text-4xl font-bold">10+</h3>
-            <p>Team Experts</p>
-          </div>
+          sm:bottom-8
 
-          <div>
-            <h3 className="text-3xl md:text-4xl font-bold">5+</h3>
-            <p>Industry Awards</p>
+          md:top-1/2
+          md:bottom-auto
+          md:left-auto
+          md:right-10
+          md:translate-x-0
+          md:-translate-y-1/2
+
+          lg:right-16
+          xl:right-24
+        "
+        >
+          <div className="relative text-center pointer-events-auto">
+            <div className="absolute inset-0 rounded-full bg-yellow-400 blur-2xl opacity-30 scale-110"></div>
+
+            <img
+              src={centerImage}
+              alt=""
+              className="
+                relative mx-auto
+                w-24 h-24
+                sm:w-28 sm:h-28
+                md:w-36 md:h-36
+                lg:w-44 lg:h-44
+                xl:w-52 xl:h-52
+                rounded-full
+                border-4 border-yellow-400
+                shadow-xl
+                object-cover
+              "
+            />
+
+            <h3 className="mt-3 text-sm sm:text-base md:text-lg font-bold">Tabish Firoz</h3>
+
+            <p className="text-yellow-400 text-xs sm:text-sm">Full Stack Developer</p>
+
+            <div className="flex justify-center gap-3 mt-3">
+              <a className="bg-white/10 hover:bg-yellow-400 hover:text-black p-2 rounded-full transition">
+                <Instagram size={16} />
+              </a>
+
+              <a className="bg-white/10 hover:bg-yellow-400 hover:text-black p-2 rounded-full transition">
+                <Linkedin size={16} />
+              </a>
+
+              <a className="bg-white/10 hover:bg-yellow-400 hover:text-black p-2 rounded-full transition">
+                <Github size={16} />
+              </a>
+
+              <a className="bg-white/10 hover:bg-yellow-400 hover:text-black p-2 rounded-full transition">
+                <Facebook size={16} />
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* OTHER SECTIONS */}
-      <section>
-        <About />
-        <Services />
-        <Project />
-        <Team />
-        <Contact />
+      {/* STATS */}
+      <section className="bg-yellow-500 text-black py-10">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <h3 className="text-2xl md:text-4xl font-bold">5+</h3>
+            <p className="text-sm md:text-base">Years Experience</p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl md:text-4xl font-bold">50+</h3>
+            <p className="text-sm md:text-base">Projects Completed</p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl md:text-4xl font-bold">10+</h3>
+            <p className="text-sm md:text-base">Team Experts</p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl md:text-4xl font-bold">5+</h3>
+            <p className="text-sm md:text-base">Industry Awards</p>
+          </div>
+        </div>
       </section>
     </div>
   );
