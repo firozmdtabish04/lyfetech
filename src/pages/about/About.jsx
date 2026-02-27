@@ -1,6 +1,6 @@
 import { ShieldCheck, Clock, Users, Trophy, ArrowRight } from "lucide-react";
 import aboutImg1 from "../../assets/Hero.png";
-import aboutImg2 from "../../assets/Hero.png";
+import aboutImg2 from "../../assets/elec.png";
 import { motion } from "framer-motion";
 
 export default function About() {

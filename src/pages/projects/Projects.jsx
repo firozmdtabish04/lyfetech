@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { ArrowRight, Maximize2, MessageCircle, PencilRuler, Cog, KeyRound } from "lucide-react";
 
 import p1 from "../../assets/Hero.png";
-import p2 from "../../assets/Hero.png";
-import p3 from "../../assets/Hero.png";
-import p4 from "../../assets/Hero.png";
-import p5 from "../../assets/Hero.png";
-import p6 from "../../assets/Hero.png";
+import p2 from "../../assets/elec.png";
+import p3 from "../../assets/image copy 2.png";
+import p4 from "../../assets/image copy 4.png";
+import p5 from "../../assets/image copy 5.png";
+import p6 from "../../assets/image copy 6.png";
 
 // ================= PROJECT DATA =================
 
@@ -15,7 +15,7 @@ const projectsData = [
   {
     image: p1,
     category: "Residential",
-    title: "Sunset Ridge Villa",
+    title: "Road and Construction",
     desc: "Premium residential complex with contemporary architecture",
   },
   {

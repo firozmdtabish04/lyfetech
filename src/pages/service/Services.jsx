@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Home, Building2, Wrench, Route, ClipboardList, PencilRuler } from "lucide-react";
 
-import serviceImage from "../../assets/Hero.png";
+import serviceImage from "../../assets/elec.png";
 
 const services = [
   {

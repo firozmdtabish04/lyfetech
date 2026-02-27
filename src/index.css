@@ -2,46 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* =========================
-   INFINITE MARQUEE
-========================= */
+/* =====================================================
+   PREMIUM INFINITE MARQUEE (TRUE CONTINUOUS)
+===================================================== */
 
 .marquee-wrapper {
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .marquee-content {
     display: flex;
-    width: max-content;
+    min-width: 200%;
+    white-space: nowrap;
+    animation: marquee-scroll 25s linear infinite;
+    will-change: transform;
+    /* smoother GPU rendering */
 }
 
 .marquee-item {
-    white-space: nowrap;
     padding-right: 60px;
     font-weight: 600;
+    white-space: nowrap;
 }
 
-/* single marquee animation */
+/* Continuous smooth scroll */
 @keyframes marquee-scroll {
-    from {
-        transform: translateX(0);
+    0% {
+        transform: translate3d(0%, 0, 0);
     }
 
-    to {
-        transform: translateX(-50%);
+    100% {
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
-.animate-marquee {
-    animation: marquee-scroll 30s linear infinite;
+/* Pause on hover */
+.marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused;
 }
 
+/* =====================================================
+   SHINE EFFECT
+===================================================== */
 
-/* =========================
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.animate-shine {
+    animation: shine 4s linear infinite;
+}
+
+/* =====================================================
+   GLOW MOVING UNDERLINE
+===================================================== */
+
+@keyframes glowLine {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(300%);
+    }
+}
+
+.animate-glow-line {
+    animation: glowLine 4s linear infinite;
+}
+
+/* =====================================================
    FLOATING IMAGE ANIMATION
-========================= */
+===================================================== */
 
 @keyframes float {
 
@@ -51,10 +91,10 @@
     }
 
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-12px);
     }
 }
 
 .animate-float {
-    animation: float 3s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
 }
