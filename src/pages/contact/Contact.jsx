@@ -1,8 +1,26 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
-import { LineChart } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_y1f7g7t", "template_k6v9qvi", form.current, "jbpNd-lB9-QGazFkH")
+      .then(() => {
+        alert("Message sent successfully!");
+        form.current.reset();
+      })
+      .catch((error) => {
+        console.log("ERROR:", error);
+        alert("Failed to send message");
+      });
+  };
+
   const contactInfo = [
     {
       icon: MapPin,
@@ -33,24 +51,6 @@ export default function Contact() {
   return (
     <section className="py-20 bg-[#f8f9fa]">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold text-gray-800">
-            Get In <span className="text-yellow-500">Touch</span>
-          </h2>
-
-          <div className="w-20 h-1 bg-orange-500 mx-auto mt-3"></div>
-
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            Contact LYFETECH for construction, electrical, and infrastructure services.
-          </p>
-        </motion.div>
-
-        {/* Main Grid */}
         <div className="grid lg:grid-cols-2 gap-10">
           {/* LEFT INFO */}
           <div className="space-y-6">
@@ -63,7 +63,7 @@ export default function Contact() {
                   initial={{ opacity: 0, x: -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.2 }}
-                  className="bg-white p-6 rounded-xl shadow-md flex items-start gap-4 hover:shadow-lg transition"
+                  className="bg-white p-6 rounded-xl shadow-md flex items-start gap-4"
                 >
                   <div className="bg-orange-500 p-3 rounded-lg">
                     <Icon size={22} className="text-white" />
@@ -71,9 +71,7 @@ export default function Contact() {
 
                   <div>
                     <h4 className="font-semibold text-gray-800">{item.title}</h4>
-
                     <p className="text-gray-600 text-sm mt-1">{item.line1}</p>
-
                     <p className="text-gray-600 text-sm">{item.line2}</p>
                   </div>
                 </motion.div>
@@ -87,33 +85,40 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             className="bg-white p-6 rounded-xl shadow-md"
           >
-            <form className="space-y-4">
+            <form ref={form} onSubmit={sendEmail} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your Name"
+                  required
                   className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:border-orange-500"
                 />
 
                 <input
                   type="email"
+                  name="email"
                   placeholder="Your Email"
-                  className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:border-orange-500"
+                  required
+                  className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:border-orange-500 text-black"
                 />
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">
                 <input
                   type="text"
+                  name="phone"
                   placeholder="Phone Number"
+                  required
                   className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:border-orange-500"
                 />
 
                 <select
-                  className="border 
-                text-gray-400 border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:border-orange-500"
+                  name="service"
+                  required
+                  className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:border-orange-500 text-black"
                 >
-                  <option>Select a Service</option>
+                  <option value="">Select a Service</option>
                   <option>Electrical Installation</option>
                   <option>Construction</option>
                   <option>Maintenance</option>
@@ -123,14 +128,18 @@ export default function Contact() {
 
               <input
                 type="text"
+                name="title"
                 placeholder="Subject"
-                className=" border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:border-orange-500"
+                required
+                className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:border-orange-500 text-black"
               />
 
               <textarea
                 rows="5"
+                name="message"
                 placeholder="Describe your project requirements..."
-                className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:border-orange-500"
+                required
+                className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:border-orange-500 text-black"
               ></textarea>
 
               <button

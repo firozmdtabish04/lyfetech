@@ -1,9 +1,8 @@
-import { ArrowRight, Instagram, Linkedin, Github, Facebook } from "lucide-react";
+import { ArrowRight, Instagram, Linkedin, Github, Facebook, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
-import NewsTicker from "../../components/NewsTicker";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -50,21 +49,45 @@ export default function Home() {
 
   return (
     <div className="text-white overflow-hidden">
-      {/* ================= NEWS TICKER ================= */}
-      <NewsTicker
-        label="lyfetech.in"
-        speed={25}
-        reverse={false}
-        news={[
-          "Welcome to LYFETECH Odisha Projects Pvt. Ltd.",
-          "Trusted Construction & Electrical Partner",
-          "Quality • Safety • Innovation",
-          "Industrial Engineering Excellence",
-        ]}
-      />
-
-      {/* ================= HERO SECTION ================= */}
       <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center">
+        {/* ================= TOP BAR ================= */}
+        <div className="absolute top-0 left-0 w-full bg-black/40 backdrop-blur-md py-3 flex justify-between items-center px-4 md:px-8 z-40">
+          {/* LEFT SOCIAL ICONS */}
+          <div className="flex gap-2 md:gap-4">
+            {[Instagram, Linkedin, Github, Facebook].map((Icon, i) => (
+              <a
+                key={i}
+                href="#"
+                className="bg-white/10 hover:bg-yellow-400 hover:text-black p-2 rounded-full transition hover:scale-110"
+              >
+                <Icon size={14} />
+              </a>
+            ))}
+          </div>
+
+          {/* RIGHT CONTACT INFO */}
+          <div className="flex items-center gap-3 md:gap-6 text-xs md:text-sm">
+            {/* EMAIL */}
+            <a
+              href="mailto:info@lyfetech.in"
+              className="flex items-center gap-1 md:gap-2 hover:text-yellow-400 transition"
+            >
+              <Mail className="text-yellow-400" size={14} />
+              <span className="hidden sm:inline">info@lyfetech.in</span>
+            </a>
+
+            {/* PHONE */}
+            <a
+              href="tel:8102946894"
+              className="hidden sm:flex items-center gap-1 md:gap-2 hover:text-yellow-400 transition"
+            >
+              <Phone className="text-yellow-400" size={14} />
+              <span>8102946894</span>
+            </a>
+          </div>
+        </div>
+
+        {/* ================= SLIDER ================= */}
         <Swiper
           modules={[Autoplay, EffectFade]}
           effect="fade"
@@ -84,7 +107,6 @@ export default function Home() {
                 alt=""
               />
 
-              {/* Dark Overlay */}
               <div className="absolute inset-0 bg-black/70" />
 
               <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[85vh] md:min-h-[90vh] flex items-center pb-40 md:pb-0">
@@ -139,7 +161,7 @@ export default function Home() {
 
             <img
               src={centerImage}
-              alt=""
+              alt="Profile"
               className="relative mx-auto w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full border-4 border-yellow-400 shadow-2xl object-cover animate-float"
             />
 
@@ -147,20 +169,9 @@ export default function Home() {
 
             <p className="text-yellow-400 text-xs sm:text-sm">Full Stack Developer</p>
 
-            <p className=" leading-relaxed  mt-2">
-              “At LYFETECH, we believe strong foundations build lasting relationships"
+            <p className="mt-2 leading-relaxed">
+              “At LYFETECH, we believe strong foundations build lasting relationships”
             </p>
-
-            <div className="flex justify-center gap-3 mt-4">
-              {[Instagram, Linkedin, Github, Facebook].map((Icon, i) => (
-                <a
-                  key={i}
-                  className="bg-white/10 hover:bg-yellow-400 hover:text-black p-2 rounded-full transition hover:scale-110"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       </section>
