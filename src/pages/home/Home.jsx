@@ -10,7 +10,7 @@ import "swiper/css/effect-fade";
 import hero1 from "../../assets/image copy 3.png";
 import hero2 from "../../assets/image copy 2.png";
 import hero3 from "../../assets/Hero.png";
-import centerImage from "../../assets/developer.jpeg";
+import centerImage from "../../assets/tabish.png";
 
 export default function Home() {
   const slides = [
@@ -165,7 +165,7 @@ export default function Home() {
               className="relative mx-auto w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full border-4 border-yellow-400 shadow-2xl object-cover animate-float"
             />
 
-            <h3 className="mt-3 text-sm sm:text-base md:text-lg font-bold">Vishaal Kumar Jhaa</h3>
+            <h3 className="mt-3 text-sm sm:text-base md:text-lg font-bold">Tabish Firoz</h3>
 
             <p className="text-yellow-400 text-xs sm:text-sm">Full Stack Developer</p>
 
