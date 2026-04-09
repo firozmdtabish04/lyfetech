@@ -1,1 +1,1 @@
-link to go live :  https://lyfetech.vercel.app/contact
+link to go live :  https://lyfetech.vercel.app/
