@@ -1,4 +1,9 @@
-<img width="290" height="726" alt="image" src="https://github.com/user-attachments/assets/2df2a14d-d7c5-4ad7-873e-0dadfc8540dd" />link to go live :  https://lyfetech.vercel.app/
+link to go live :  https://lyfetech.vercel.app/
+
+
+
+<img width="290" height="726" alt="image" src="https://github.com/user-attachments/assets/2df2a14d-d7c5-4ad7-873e-0dadfc8540dd" />
+
 
 
 # 🚀 LYFETECH
