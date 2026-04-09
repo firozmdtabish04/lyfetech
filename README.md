@@ -1,1 +1,1 @@
-link to go live :  https://keen-sorbet-0e4f74.netlify.app/
+link to go live :  https://lyfetech.vercel.app/contact
