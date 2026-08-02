@@ -231,12 +231,10 @@ export default function Footer() {
           </div>
 
           {/* Bottom Line */}
-          <div className="mt-3 pt-1 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-l tracking-[0.35em] uppercase text-slate-500 font-semibold text-center md:text-left">
-              Engineering Excellence • Innovation • Safety • Integrity
-            </p>
+          <div className="mt-3 pt-1 border-t border-white/10 flex flex-col md:flex-row justify-center items-center gap-4">
+            
 
-            <p className="text-xl text-slate-400 text-center md:text-right">
+            <p className="text-xl text-slate-400 text-center md:text-right ">
               Designed & Developed by{" "}
               <a
                 href="https://lyient.com"
