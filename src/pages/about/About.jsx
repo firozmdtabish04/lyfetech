@@ -15,7 +15,6 @@ import {
 import aboutImg2 from "../../assets/7.jpeg";
 import aboutImg1 from "../../assets/elepole.png";
 import { Link } from "react-router-dom";
-
 export default function About() {
   const missionPoints = [
     "Deliver high-quality engineering services with safety as the highest priority.",
@@ -25,7 +24,7 @@ export default function About() {
   ];
 
   return (
-    <section className="bg-gray-50 py-16 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mt-20">
         {/* MAIN ABOUT SECTION */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">

@@ -114,8 +114,8 @@ export default function ProjectsAndWork() {
   const activeConfig = filterConfigs.find((f) => f.label === activeFilter);
 
   return (
-    <div className="bg-white">
-      <section className="py-20 bg-slate-50 mt-12">
+    <div className="bg-transparent">
+      <section className="relative py-20 mt-12">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-12">

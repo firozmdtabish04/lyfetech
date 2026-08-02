@@ -20,23 +20,7 @@ export default function Home() {
   }, [heroImages.length]);
 
   return (
-    <div className="relative bg-white min-h-screen pt-20 overflow-hidden">
-      {/* BACKGROUND GRID EFFECT */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none opacity-[1]"
-        style={{
-          backgroundImage: `linear-gradient(#f1f5f9 1px, transparent 1px), linear-gradient(90deg, #f1f5f9 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
-        }}
-      ></div>
-
-      {/* WATERMARK EFFECT */}
-      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden select-none">
-        <h2 className="text-[14vw] font-black text-slate-900/[0.2] rotate-[-15deg] whitespace-nowrap">
-          LYFETECH
-        </h2>
-      </div>
-
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative z-10 px-6 lg:px-12 py-12 lg:py-20 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -44,7 +28,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.1 }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-sm font-semibold mb-6">
               <Zap size={16} />
@@ -82,12 +66,12 @@ export default function Home() {
 
           {/* Right Image Section */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.2 }}
-            animate={{ opacity: 1, scale: 1.1 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl h-[500px]">
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl h-[400px] sm:h-[500px]">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentImage}
@@ -133,7 +117,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Summary Section (White Background Cards) */}
+      {/* Services Summary Section */}
       <section className="relative z-10 py-16 bg-slate-50/80 backdrop-blur-sm border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

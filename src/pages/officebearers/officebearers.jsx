@@ -2,24 +2,24 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, Linkedin, ExternalLink, Award, ShieldCheck } from "lucide-react";
 import avatar from "../../assets/avatar.png";
-import Profile1 from "../../assets/profile1.png"
-import Profile2 from "../../assets/profile2.png"
-import Profile3 from "../../assets/profile3.png"
-import Profile4 from "../../assets/profile4.png"
+import Profile1 from "../../assets/profile1.png";
+import Profile2 from "../../assets/profile2.png";
+import Profile3 from "../../assets/profile3.png";
+import Profile4 from "../../assets/profile4.png";
 
 import ClientTestimonials from "./ClientTestimonials";
 
 const officeBearers = [
   {
-  name: "Tabish Firoz",
-  role: "President",
-  image: Profile4,
-  phone: "+91 9876543210",
-  email: "president@lyfetech.in",
-  linkedin: "#",
-  bio: "Tabish Firoz is the President of LyfeTech Odisha Projects Pvt. Ltd., committed to driving innovation, quality, and customer satisfaction in engineering and infrastructure projects. With a strong background in technology and project management, he focuses on delivering reliable electrical, civil, and Cable solutions while promoting sustainable development and operational excellence.",
-  expertise: "Strategic Leadership & Business Development",
-},
+    name: "Tabish Firoz",
+    role: "President",
+    image: Profile4,
+    phone: "+91 9876543210",
+    email: "president@lyfetech.in",
+    linkedin: "#",
+    bio: "Tabish Firoz is the President of LyfeTech Odisha Projects Pvt. Ltd., committed to driving innovation, quality, and customer satisfaction in engineering and infrastructure projects. With a strong background in technology and project management, he focuses on delivering reliable electrical, civil, and Cable solutions while promoting sustainable development and operational excellence.",
+    expertise: "Strategic Leadership & Business Development",
+  },
   {
     name: "Ritika Sharma",
     role: "Vice President",
@@ -54,7 +54,7 @@ const officeBearers = [
 
 const OfficeBearers = () => {
   return (
-    <div className="bg-[#fcfcfd] overflow-x-hidden w-full pt-8">
+    <div className="overflow-x-hidden w-full pt-8">
       {/* --- Section Header --- */}
       <section className="relative pt-16 md:pt-24 pb-8 md:pb-12 px-4 md:px-6 mt-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -247,7 +247,7 @@ const OfficeBearers = () => {
       </section>
 
       {/* --- Testimonials Section --- */}
-      <section className="py-20 bg-white border-t border-slate-100">
+      <section className="relative py-20 border-t border-slate-100">
         <ClientTestimonials />
       </section>
     </div>

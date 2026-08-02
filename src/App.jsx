@@ -1,15 +1,13 @@
 import AppRoutes from "./routes/routes";
 import ScrollToTopButton from "./components/card/ScrollToTopButton";
+import BackgroundLayout from "../src/pages/background/BackgroundLayout";
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-slate-50">
-      <main className="relative z-10">
-        <AppRoutes />
-      </main>
-
+    <BackgroundLayout>
+      <AppRoutes />
       <ScrollToTopButton />
-    </div>
+    </BackgroundLayout>
   );
 }
 

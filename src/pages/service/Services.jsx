@@ -20,7 +20,7 @@ const services = [
     no: "01",
     icon: Zap,
     title: "Electrical Engineering",
-    
+
     desc: "Comprehensive HT & LT electrical infrastructure including power distribution, solar integration, and industrial automation.",
     details: [
       "HT/LT Panel & Switchgear",
@@ -38,7 +38,7 @@ const services = [
     no: "02",
     icon: Cpu,
     title: "MV Installation Works",
-   
+
     desc: "End-to-end Medium Voltage solutions for power utilities and heavy industries, focusing on 11kV/33kV networks.",
     details: [
       "Substation Construction",
@@ -56,7 +56,7 @@ const services = [
     no: "03",
     icon: Building2,
     title: "Civil & Infrastructure",
-   
+
     desc: "Heavy-duty industrial civil works, from deep foundations to structural RCC and factory layouts.",
     details: [
       "RCC Frame Structures",
@@ -74,7 +74,7 @@ const services = [
     no: "04",
     icon: WrenchIcon,
     title: "Cable Laying Works",
- 
+
     desc: "Professional cable laying solutions for power distribution and industrial infrastructure, ensuring safe installation, protection, and long-term reliability.",
     details: [
       "HT & LT Underground Cable Laying",
@@ -128,7 +128,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="relative bg-white py-24 overflow-hidden mt-16">
+    <section className="relative bg-transparent py-24 overflow-hidden mt-16">
       {/* Background Blueprint Grid */}
       <div
         className="absolute inset-0 opacity-[0.05] pointer-events-none"
