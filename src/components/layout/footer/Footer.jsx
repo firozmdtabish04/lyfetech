@@ -138,6 +138,7 @@ export default function Footer() {
                     className="block text-slate-900 hover:text-amber-600 transition-colors"
                   >
                     info@lyfetech.in
+                    
                   </a>
                   <a
                     href="mailto:md@lyfetech.in"
