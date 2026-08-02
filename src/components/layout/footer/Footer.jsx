@@ -183,7 +183,7 @@ export default function Footer() {
         {/* Golden Glow */}
         <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-3">
+        <div className="relative max-w-7xl mx-auto px-6 py-1">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             {/* Left */}
             <div className="text-center lg:text-left">
@@ -191,7 +191,7 @@ export default function Footer() {
                 LYFETECH Odisha Projects Pvt. Ltd.
               </h4>
 
-              <p className="text-slate-400 text-sm mt-2">
+              <p className="text-slate-400 text-sm">
                 Delivering Excellence in Electrical & Civil Engineering Solutions Across India.
               </p>
 
@@ -206,7 +206,7 @@ export default function Footer() {
             <div className="hidden lg:block w-px h-20 bg-gradient-to-b from-transparent via-amber-500/50 to-transparent" />
 
             {/* Right */}
-            <div className="flex flex-wrap justify-center gap-8 text-sm uppercase tracking-[0.2em] font-bold">
+            <div className="flex flex-wrap justify-center gap-4 text-xs uppercase tracking-[0.2em] font-bold">
               <Link
                 to="/privacy"
                 className="text-slate-400 hover:text-amber-400 transition-all duration-300 hover:-translate-y-1"
@@ -231,8 +231,8 @@ export default function Footer() {
           </div>
 
           {/* Bottom Line */}
-          <div className="mt-3 pt-1 border-t border-white/10 flex flex-col md:flex-row justify-center items-center gap-4">
-            <p className="text-xl text-slate-400 text-center md:text-right ">
+          <div className=" border-t border-white/10 flex flex-col md:flex-row justify-center items-center gap-4">
+            <p className="text-l text-slate-400 text-center md:text-right ">
               Designed & Developed by{" "}
               <a
                 href="https://lyient.com"
