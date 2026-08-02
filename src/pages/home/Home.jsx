@@ -23,7 +23,7 @@ export default function Home() {
     <div className="relative bg-white min-h-screen pt-20 overflow-hidden">
       {/* BACKGROUND GRID EFFECT */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none opacity-[0.6]"
+        className="absolute inset-0 z-0 pointer-events-none opacity-[1]"
         style={{
           backgroundImage: `linear-gradient(#f1f5f9 1px, transparent 1px), linear-gradient(90deg, #f1f5f9 1px, transparent 1px)`,
           backgroundSize: "40px 40px",
@@ -32,7 +32,7 @@ export default function Home() {
 
       {/* WATERMARK EFFECT */}
       <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden select-none">
-        <h2 className="text-[12vw] font-black text-slate-900/[.2] rotate-[-15deg] whitespace-nowrap">
+        <h2 className="text-[14vw] font-black text-slate-900/[0.2] rotate-[-15deg] whitespace-nowrap">
           LYFETECH
         </h2>
       </div>
