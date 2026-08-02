@@ -232,8 +232,6 @@ export default function Footer() {
 
           {/* Bottom Line */}
           <div className="mt-3 pt-1 border-t border-white/10 flex flex-col md:flex-row justify-center items-center gap-4">
-            
-
             <p className="text-xl text-slate-400 text-center md:text-right ">
               Designed & Developed by{" "}
               <a
@@ -253,7 +251,7 @@ export default function Footer() {
       <div className="fixed bottom-6 right-4 lg:right-8 z-50 flex flex-col gap-3">
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/917855004500"
+          href="https://wa.me/9937219000"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-500 text-white p-3 md:px-5 md:py-3 rounded-2xl shadow-xl flex items-center gap-3 hover:bg-green-600 transition-all hover:-translate-y-1 active:scale-95 group"
