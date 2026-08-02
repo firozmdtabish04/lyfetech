@@ -21,7 +21,7 @@ const services = [
     icon: Zap,
     title: "Electrical Engineering",
 
-    desc: "Comprehensive HT & LT electrical infrastructure including power distribution, solar integration, and industrial automation.",
+    desc: "Comprehensive EHT,HT & LT electrical infrastructure including power distribution, solar integration, and industrial automation.",
     details: [
       "HT/LT Panel & Switchgear",
       "Transformer Erection (Up to 200kV)",
@@ -45,7 +45,7 @@ const services = [
       "RMU & VCB Installation",
       "Relay Testing & Calibration",
       "U/G Cable Laying & Termination",
-      "Overhead Line Erection",
+      "Overhead Line(H-Pole,Tower) Erection",
       "Grid Synchronization",
     ],
     color: "bg-blue-600",
@@ -59,7 +59,7 @@ const services = [
 
     desc: "Heavy-duty industrial civil works, from deep foundations to structural RCC and factory layouts.",
     details: [
-      "RCC Frame Structures",
+      "RCC Frame work, Heavy Equipment & Piling Work",
       "Industrial Machine Foundations",
       "Heavy-duty Flooring (VDF)",
       "Site Development & Earthworks",
@@ -77,7 +77,7 @@ const services = [
 
     desc: "Professional cable laying solutions for power distribution and industrial infrastructure, ensuring safe installation, protection, and long-term reliability.",
     details: [
-      "HT & LT Underground Cable Laying",
+      "EHT,HT & LT Underground Cable Laying",
       "Cable Trench & Duct Installation",
       "Cable Tray & Ladder Installation",
       "Cable Jointing & Termination",
@@ -99,7 +99,7 @@ const services = [
       "Energy & Safety Audits",
       "BOQ & Tender Preparation",
       "Project Management (PMC)",
-      "Feasibility Studies",
+      "Survey & Feasibility Studies",
       "SLD & Layout Design",
     ],
     color: "bg-cyan-700",
@@ -118,7 +118,7 @@ const services = [
       "MEP Integration",
       "Landscaping & External Dev",
       "Structural Retrofitting",
-      "Smart Home Wiring",
+      "Smart Automation Wiring",
     ],
     color: "bg-emerald-700",
     shadow: "hover:shadow-emerald-200/50",

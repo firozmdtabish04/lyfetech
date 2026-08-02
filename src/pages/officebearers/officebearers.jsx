@@ -5,50 +5,72 @@ import avatar from "../../assets/avatar.png";
 import Profile1 from "../../assets/profile1.png";
 import Profile2 from "../../assets/profile2.png";
 import Profile3 from "../../assets/profile3.png";
-import Profile4 from "../../assets/profile4.png";
+import Profile4 from "../../assets/profile1.png";
+import Profile5 from "../../assets/profile2.png";
+import Profile6 from "../../assets/profile4.png";
 
 import ClientTestimonials from "./ClientTestimonials";
 
 const officeBearers = [
   {
-    name: "Tabish Firoz",
-    role: "President",
-    image: Profile4,
-    phone: "+91 9876543210",
-    email: "president@lyfetech.in",
-    linkedin: "#",
-    bio: "Tabish Firoz is the President of LyfeTech Odisha Projects Pvt. Ltd., committed to driving innovation, quality, and customer satisfaction in engineering and infrastructure projects. With a strong background in technology and project management, he focuses on delivering reliable electrical, civil, and Cable solutions while promoting sustainable development and operational excellence.",
-    expertise: "Strategic Leadership & Business Development",
-  },
-  {
-    name: "Ritika Sharma",
-    role: "Vice President",
+    name: "Amiya Kanta Das",
+    role: "Electrical Contractor",
     image: Profile1,
-    phone: "+91 9876543211",
-    email: "vicepresident@lyfetech.in",
+    phone: "+91XXXXX XXXXX",
+    email: "info@lyfetech.in",
     linkedin: "#",
-    bio: "Rahul specializes in large-scale project management. His ability to streamline complex operations has been instrumental in delivering major landmarks across the region.",
-    expertise: "Project Operations",
+    bio: "Amiya Kanta Das is an experienced Electrical Contractor specializing in electrical infrastructure, power distribution systems, industrial installations, and project execution. He is committed to delivering safe, reliable, and high-quality engineering solutions.",
+    expertise: "Electrical Infrastructure & Project Execution",
   },
   {
-    name: "Dan Vardo",
-    role: "Secretary",
+    name: "Amulya Kumar Das",
+    role: "Architect",
     image: Profile2,
-    phone: "+91 9876543212",
-    email: "secretary@lyfetech.in",
+    phone: "+91 XXXXX XXXXX",
+    email: "info@lyfetech.in",
     linkedin: "#",
-    bio: "Priya ensures the seamless integration of corporate governance and client relations. Her focus on transparency and communication builds the foundation of our trust.",
-    expertise: "Corporate Relations",
+    bio: "Amulya Kumar Das is a professional Architect with expertise in architectural planning, building design, and sustainable infrastructure development. He focuses on creating innovative, functional, and aesthetically appealing spaces.",
+    expertise: "Architecture & Building Design",
   },
   {
-    name: "Amit Sighania",
-    role: "Treasurer",
+    name: "Saroj Kumar Khuntia",
+    role: "Engineer",
     image: Profile3,
-    phone: "+91 9876543213",
-    email: "treasurer@lyfetech.in",
+    phone: "+91 XXXXX XXXXX",
+    email: "info@lyfetech.in",
     linkedin: "#",
-    bio: "Amit manages the financial health of the organization, ensuring project viability and resource optimization for every venture LyfeTech undertakes.",
-    expertise: "Financial Strategy",
+    bio: "Saroj Kumar Khuntia is an Engineer with extensive experience in civil and electrical engineering projects. He ensures technical excellence, quality standards, and efficient execution throughout every stage of project development.",
+    expertise: "Engineering & Technical Operations",
+  },
+  {
+    name: "J. Subhashree Mohapatra",
+    role: "Home Owner",
+    image: Profile4,
+    phone: "+91 XXXXX XXXXX",
+    email: "info@lyfetech.in",
+    linkedin: "#",
+    bio: "J. Subhashree Mohapatra represents the perspective of homeowners, emphasizing quality construction, customer satisfaction, and practical solutions that meet residential infrastructure needs.",
+    expertise: "Residential Development & Client Relations",
+  },
+  {
+    name: "Rashmi Ranjan Jena",
+    role: "Real Estate Agent",
+    image: Profile5,
+    phone: "+91 XXXXX XXXXX",
+    email: "info@lyfetech.in",
+    linkedin: "#",
+    bio: "Rashmi Ranjan Jena is a Real Estate Agent with expertise in property consulting, investment guidance, and market analysis. He assists clients in identifying valuable real estate opportunities while ensuring transparency and trust.",
+    expertise: "Real Estate Consulting",
+  },
+  {
+    name: "Rajat Kumar Patra",
+    role: "Property Developer",
+    image: Profile6,
+    phone: "+91 XXXXX XXXXX",
+    email: "info@lyfetech.in",
+    linkedin: "#",
+    bio: "Rajat Kumar Patra is a Property Developer experienced in residential and commercial development projects. He oversees planning, execution, and project delivery with a focus on quality, sustainability, and long-term value creation.",
+    expertise: "Property Development & Infrastructure",
   },
 ];
 
@@ -188,7 +210,7 @@ const OfficeBearers = () => {
                 <div className="space-y-3">
                   <div className="flex items-center justify-center lg:justify-start gap-3">
                     <span className="hidden lg:block h-[2px] w-8 bg-yellow-500"></span>
-                    <span className="text-yellow-600 font-bold uppercase tracking-widest text-[10px] md:text-xs">
+                    <span className="text-yellow-600 font-bold uppercase tracking-widest text-[20px] md:text-xl">
                       {person.role}
                     </span>
                   </div>

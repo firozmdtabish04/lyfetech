@@ -278,7 +278,7 @@ export default function Layout({ children }) {
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-amber-400 shrink-0" />
-                <span>info@lyfetech.com</span>
+                <span>info@lyfetech.in</span>
               </li>
             </ul>
           </div>
