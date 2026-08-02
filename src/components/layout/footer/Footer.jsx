@@ -221,7 +221,12 @@ export default function Footer() {
                 Terms & Conditions
               </Link>
 
-              
+              <Link
+                to="/sitemap"
+                className="text-slate-400 hover:text-amber-400 transition-all duration-300 hover:-translate-y-1"
+              >
+                Sitemap
+              </Link>
             </div>
           </div>
 
