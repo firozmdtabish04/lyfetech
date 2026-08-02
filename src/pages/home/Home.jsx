@@ -6,6 +6,7 @@ import HeroImage1 from "../../assets/hero1.png";
 import HeroImage2 from "../../assets/hero2.png";
 import HeroImage4 from "../../assets/hero6.png";
 import { Link } from "react-router-dom";
+
 export default function Home() {
   const heroImages = [HeroImage4, HeroImage2, HeroImage3, HeroImage1];
   const [currentImage, setCurrentImage] = useState(0);
@@ -17,10 +18,27 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [heroImages.length]);
+
   return (
-    <div className="bg-white min-h-screen pt-20">
+    <div className="relative bg-white min-h-screen pt-20 overflow-hidden">
+      {/* BACKGROUND GRID EFFECT */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none opacity-[0.6]"
+        style={{
+          backgroundImage: `linear-gradient(#f1f5f9 1px, transparent 1px), linear-gradient(90deg, #f1f5f9 1px, transparent 1px)`,
+          backgroundSize: "40px 40px",
+        }}
+      ></div>
+
+      {/* WATERMARK EFFECT */}
+      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden select-none">
+        <h2 className="text-[12vw] font-black text-slate-900/[.2] rotate-[-15deg] whitespace-nowrap">
+          LYFETECH
+        </h2>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative px-6 lg:px-12 py-12 lg:py-20 max-w-7xl mx-auto">
+      <section className="relative z-10 px-6 lg:px-12 py-12 lg:py-20 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -45,7 +63,6 @@ export default function Home() {
               excellence define every project we undertake.
             </p>
 
-            
             {/* Quick Stats/Trust Badges */}
             <div className="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-slate-100">
               <div>
@@ -117,7 +134,7 @@ export default function Home() {
       </section>
 
       {/* Services Summary Section (White Background Cards) */}
-      <section className="py-16 bg-slate-50">
+      <section className="relative z-10 py-16 bg-slate-50/80 backdrop-blur-sm border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ServiceCard
@@ -144,7 +161,7 @@ export default function Home() {
 
 function ServiceCard({ icon, title, desc }) {
   return (
-    <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+    <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative z-10">
       <div className="mb-4">{icon}</div>
       <h3 className="text-xl font-bold text-slate-900 mb-2">{title}</h3>
       <p className="text-slate-600 text-sm leading-relaxed">{desc}</p>
