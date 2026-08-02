@@ -39,7 +39,19 @@ export default function BackgroundLayout({ children }) {
         >
           {/* Stroke */}
           <h1
-            className="text-[clamp(5rem,18vw,24rem)] font-black uppercase tracking-tight whitespace-nowrap text-transparent"
+            className="
+    text-[6rem]
+    sm:text-[7rem]
+    md:text-[9rem]
+    lg:text-[12rem]
+    xl:text-[14rem]
+    2xl:text-[16rem]
+    font-black
+    uppercase
+    tracking-tight
+    whitespace-nowrap
+    text-transparent
+  "
             style={{
               WebkitTextStroke: "1px rgba(15,23,42,.04)",
             }}
@@ -48,7 +60,27 @@ export default function BackgroundLayout({ children }) {
           </h1>
 
           {/* Gradient */}
-          <h1 className="absolute inset-0 text-[clamp(7rem,18vw,20rem)] font-black uppercase tracking-tight whitespace-nowrap bg-gradient-to-br from-slate-900/5 via-amber-900/1 to-slate-900/6 bg-clip-text text-transparent">
+          <h1
+            className="
+    absolute inset-0
+    text-[6rem]
+    sm:text-[7rem]
+    md:text-[9rem]
+    lg:text-[12rem]
+    xl:text-[14rem]
+    2xl:text-[16rem]
+    font-black
+    uppercase
+    tracking-tight
+    whitespace-nowrap
+    bg-gradient-to-br
+    from-slate-900/20
+    via-amber-900/5
+    to-slate-900/
+    bg-clip-text
+    text-transparent
+  "
+          >
             LYFETECH
           </h1>
 
