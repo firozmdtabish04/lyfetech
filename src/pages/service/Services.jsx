@@ -24,7 +24,7 @@ const services = [
     desc: "Comprehensive EHT,HT & LT electrical infrastructure including power distribution, solar integration, and industrial automation.",
     details: [
       "HT/LT Panel & Switchgear",
-      "Transformer Erection (Up to 200kV)",
+      "Transformer Erection (Up to 220kV)",
       "Industrial Wiring & Cabling",
       "Earthing & Lightning Protection",
       "DG Set & Solar Installation",
