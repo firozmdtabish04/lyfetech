@@ -140,20 +140,62 @@ export default function ServicesSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Trust Bar */}
-        <div className="flex flex-wrap justify-center gap-6 md:gap-12 mb-20">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-20">
           {[
-            { icon: BarChart3, label: "MSME UDYAM Certified", sub: "OD-19-0167040" },
-            { icon: ShieldAlert, label: "GST Registered", sub: "21AAGCL2956FIZQ" },
-            { icon: Microscope, label: "Precision Testing", sub: "NABL Standards" },
+            {
+              icon: BarChart3,
+              label: "MSME UDYAM Certified",
+              sub: "UDYAM-OD-19-0167040",
+            },
+            {
+              icon: ShieldAlert,
+              label: "GST Registered",
+              sub: "21AAGCL2956F1ZQ",
+            },
+            {
+              icon: Microscope,
+              label: "Precision Testing",
+              sub: "NABL Standards",
+            },
           ].map((stat, i) => (
             <div
               key={i}
-              className="flex items-center gap-3 bg-slate-50 px-6 py-3 rounded-2xl border border-slate-100 shadow-sm"
+              className="
+        group
+        flex items-center gap-4
+        px-7 py-5
+        rounded-2xl
+        border border-amber-200/60
+        bg-white
+        shadow-lg shadow-amber-100/40
+        hover:shadow-2xl hover:shadow-amber-200/50
+        hover:-translate-y-1
+        transition-all duration-300
+      "
             >
-              <stat.icon className="text-amber-600" size={24} />
+              {/* Icon */}
+              <div
+                className="
+          flex h-14 w-14 items-center justify-center
+          rounded-xl
+          bg-gradient-to-br
+          from-amber-500
+          via-amber-600
+          to-orange-600
+          text-white
+          shadow-lg
+          group-hover:scale-110
+          transition-transform
+        "
+              >
+                <stat.icon size={28} />
+              </div>
+
+              {/* Text */}
               <div>
-                <p className="text-slate-900 font-bold text-sm leading-none">{stat.label}</p>
-                <p className="text-slate-500 text-[10px] uppercase font-bold mt-1 tracking-wider">
+                <h4 className="text-base font-bold text-slate-900">{stat.label}</h4>
+
+                <p className="mt-1 text-xs font-semibold tracking-[0.18em] uppercase text-amber-700">
                   {stat.sub}
                 </p>
               </div>
