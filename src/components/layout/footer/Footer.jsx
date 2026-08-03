@@ -1,8 +1,19 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, ArrowUp } from "lucide-react";
-
+import React, { useEffect, useState } from "react";
 export default function Footer() {
+  const [showTop, setShowTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTop(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -253,7 +264,11 @@ export default function Footer() {
         {/* Scroll To Top Button */}
         <button
           onClick={scrollToTop}
-          className="bg-white text-slate-900 p-3 md:px-5 md:py-3 rounded-2xl shadow-xl flex items-center gap-2.5 hover:bg-amber-500 hover:text-white transition-all hover:-translate-y-0.5 active:scale-95 border border-slate-200"
+          className={`bg-white text-slate-900 p-3 md:px-5 md:py-3 rounded-2xl shadow-xl flex items-center gap-2.5 hover:bg-amber-500 hover:text-white transition-all duration-300 hover:-translate-y-0.5 active:scale-95 border border-slate-200 ${
+            showTop
+              ? "opacity-100 translate-y-0 pointer-events-auto"
+              : "opacity-0 translate-y-5 pointer-events-none"
+          }`}
           aria-label="Back to top"
         >
           <ArrowUp size={18} strokeWidth={2.5} />
