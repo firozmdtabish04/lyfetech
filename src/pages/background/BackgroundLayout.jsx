@@ -25,18 +25,7 @@ export default function BackgroundLayout({ children }) {
 
       {/* ================= GLOBAL WATERMARK ================= */}
       <div className="fixed inset-0 pointer-events-none z-20 overflow-hidden flex items-center justify-center">
-        <motion.div
-          animate={{
-            y: [-10, 10, -10],
-            rotate: [-12, -8, -12],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="relative select-none"
-        >
+        <motion.div className="relative select-none">
           {/* Stroke */}
           <h1
             className="
