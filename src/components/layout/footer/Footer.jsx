@@ -1,15 +1,6 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-  MapPin,
-  Phone,
-  Mail,
-  ChevronRight,
-  ArrowUp,
-} from "lucide-react";
+import { MapPin, Phone, Mail, ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -24,254 +15,249 @@ export default function Footer() {
     { name: "Contact", path: "/contact" },
   ];
 
-  const services = [
-    "Electrical Engineering",
-    "MV Installation Works",
-    "Civil & Infrastructure",
-    "Cable Laying Works",
-    "Electrical Consultancy",
-  ];
-
   return (
-    <footer className="relative bg-gray-200 text-slate-600 pt-16 border-t border-slate-900">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* MAIN FOOTER CONTENT */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
-          {/* Company Bio */}
-          <div className="space-y-6">
-            <Link to="/" className="inline-block group">
-              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-amber-500">
-                LYFETECH
-              </h2>
+    <footer className="relative bg-slate-100 text-slate-600  border-slate-200 overflow-hidden">
+      {/* Background Watermark Text */}
+      <div className="absolute inset-0 pointer-events-none select-none overflow-hidden opacity-[0.04]">
+        <span className="text-[180px] font-black tracking-widest text-slate-900 absolute -bottom-10 -left-10 leading-none">
+          LYFETECH
+        </span>
+      </div>
 
-              <p className="mt-1 text-sm font-semibold text-slate-700 tracking-wide">
-                Odisha Projects Pvt. Ltd.
-              </p>
+      <div className="relative max-w-7xl mx-auto  lg:px-8 py-3 z-10">
+        <div className="grid grid-cols-1 xl:grid-cols-5 gap-12 items-start">
+          {/* LEFT CONTENT */}
+          <div className="xl:col-span-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Company Bio */}
+              <div className="space-y-4">
+                <Link to="/" className="inline-block group">
+                  <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 group-hover:text-amber-500 transition-colors">
+                    LYFETECH
+                  </h2>
+                  <p className="mt-1 text-sm font-semibold text-slate-700">
+                    Odisha Projects Pvt. Ltd.
+                  </p>
+                  <div className="mt-2 h-1 w-16 bg-gradient-to-r from-amber-500 to-yellow-400 rounded-full group-hover:w-28 transition-all duration-300" />
+                </Link>
 
-              <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 transition-all duration-300 group-hover:w-32" />
-            </Link>
-
-            <p className="text-sm leading-relaxed font-medium">
-              Delivering innovative construction, infrastructure, electrical engineering and
-              industrial solutions with precision and reliability since inception.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-slate-900 font-black text-sm uppercase tracking-widest mb-8 flex items-center gap-2">
-              <span className="w-6 h-[2px] bg-amber-500" />
-              Company
-            </h3>
-            <ul className="space-y-4 text-sm font-bold uppercase tracking-tight">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="flex items-center gap-2 hover:text-amber-600 transition-colors group text-slate-500"
-                  >
-                    <ChevronRight
-                      size={14}
-                      className="text-amber-500 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all"
-                    />
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-slate-900 font-black text-sm uppercase tracking-widest mb-8 flex items-center gap-2">
-              <span className="w-6 h-[2px] bg-amber-500" />
-              Our Services
-            </h3>
-            <ul className="space-y-4 text-sm font-medium">
-              {services.map((service) => (
-                <li key={service}>
-                  <Link
-                    to="/service"
-                    className="flex items-center gap-2 hover:text-amber-600 transition-colors group text-slate-500"
-                  >
-                    <ChevronRight
-                      size={14}
-                      className="text-amber-500 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all"
-                    />
-                    {service}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-slate-900 font-black text-sm uppercase tracking-widest mb-8 flex items-center gap-2">
-              <span className="w-6 h-[2px] bg-amber-500" />
-              Get In Touch
-            </h3>
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <MapPin className="text-amber-600 shrink-0" size={20} />
-                <span className="text-sm leading-relaxed">
-                  Ground Floor, Plot No. 892/5984/5983, Palasuni, Rasulgarh, Bhubaneswar, Odisha -
-                  751025
-                </span>
+                <p className="text-sm leading-relaxed text-slate-600 pt-2">
+                  Delivering innovative construction, infrastructure, electrical engineering, and
+                  industrial solutions with precision and reliability.
+                </p>
               </div>
 
-              <div className="flex gap-4 items-center">
-                <Phone className="text-amber-600 shrink-0" size={20} />
+              {/* Quick Links */}
+              <div>
+                <h3 className="font-extrabold uppercase tracking-widest text-sm text-slate-900 mb-5">
+                  Company
+                </h3>
+                <ul className="space-y-3 text-sm">
+                  {quickLinks.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        to={link.path}
+                        className="text-slate-600 hover:text-amber-600 font-medium transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Contact Information */}
+              <div>
+                <h3 className="font-extrabold uppercase tracking-widest text-sm text-slate-900 mb-5">
+                  Contact
+                </h3>
+
+                <div className="space-y-4 text-sm">
+                  <div className="flex gap-3 items-start">
+                    <MapPin className="text-amber-500 shrink-0 mt-1" size={18} />
+                    <span className="leading-snug text-slate-600">
+                      Ground Floor, Plot No. 892/5984/5983, Palasuni, Rasulgarh, Bhubaneswar, Odisha
+                      - 751025
+                    </span>
+                  </div>
+
+                  <div className="flex gap-3 items-center">
+                    <Phone className="text-amber-500 shrink-0" size={18} />
+                    <a
+                      href="tel:+917855004500"
+                      className="text-slate-700 font-semibold hover:text-amber-600 transition-colors"
+                    >
+                      +91 7855004500
+                    </a>
+                  </div>
+
+                  <div className="flex gap-3 items-start">
+                    <Mail className="text-amber-500 shrink-0 mt-1" size={18} />
+                    <div className="space-y-1">
+                      <a
+                        href="mailto:info@lyfetech.in"
+                        className="block text-slate-600 hover:text-amber-600 transition-colors"
+                      >
+                        info@lyfetech.in
+                      </a>
+                      <a
+                        href="mailto:md@lyfetech.in"
+                        className="block text-slate-600 hover:text-amber-600 transition-colors"
+                      >
+                        md@lyfetech.in
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT MAP CARD */}
+          <div className="xl:col-span-2">
+            <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:shadow-amber-500/10">
+              {/* Header */}
+              <div className="relative bg-slate-900 p-6 text-white">
+                <div className="relative flex items-start justify-between gap-4">
+                  <div>
+                    <span className="inline-block rounded-full bg-amber-500/20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-400 mb-2">
+                      Corporate Office
+                    </span>
+                    <h3 className="text-2xl font-bold tracking-tight">Our Location</h3>
+                    <p className="mt-1 text-xs text-slate-300 leading-relaxed">
+                      Visit our office for project consultation and business enquiries.
+                    </p>
+                  </div>
+
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-white shadow-md">
+                    <MapPin size={22} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Map Preview */}
+              <div className="relative h-64 w-full bg-slate-100 overflow-hidden">
+                <iframe
+                  title="LyfeTech Location Map"
+                  src="https://www.google.com/maps?q=Ground+Floor,+Plot+No.+892/5984/5983,+Palasuni,+Rasulgarh,+Bhubaneswar,+Odisha+751025&output=embed"
+                  className="h-full w-full border-0"
+                  loading="lazy"
+                />
+
+                {/* Floating Office Badge overlay on Map */}
+                <div className="absolute left-4 bottom-4 right-4 max-w-xs rounded-2xl border border-slate-200/80 bg-white/95 p-3 shadow-lg backdrop-blur-sm">
+                  <div className="flex gap-3 items-center">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-500 text-white">
+                      <MapPin size={18} />
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-900">LYFETECH Office</h4>
+                      <p className="text-[11px] leading-tight text-slate-500 line-clamp-2 mt-0.5">
+                        Ground Floor, Plot No. 892/5984/5983, Palasuni, Rasulgarh, Bhubaneswar,
+                        Odisha - 751025
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="grid grid-cols-2 border-t border-slate-200 bg-white text-xs font-bold">
+                <a
+                  href="https://maps.google.com/?q=Ground+Floor,+Plot+No.+892/5984/5983,+Palasuni,+Rasulgarh,+Bhubaneswar,+Odisha+751025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-4 text-slate-700 hover:bg-amber-500 hover:text-white transition-colors"
+                >
+                  <MapPin size={16} />
+                  Open Maps
+                </a>
+
                 <a
                   href="tel:+917855004500"
-                  className="text-slate-900 font-bold hover:text-amber-600 transition-colors"
+                  className="flex items-center justify-center gap-2 border-l border-slate-200 py-4 text-slate-700 hover:bg-slate-900 hover:text-white transition-colors"
                 >
-                  +91 7855004500
+                  <Phone size={16} />
+                  Call Office
                 </a>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <Mail className="text-amber-600 shrink-0" size={20} />
-                <div className="text-sm font-bold space-y-1">
-                  <a
-                    href="mailto:info@lyfetech.in"
-                    className="block text-slate-900 hover:text-amber-600 transition-colors"
-                  >
-                    info@lyfetech.in
-                    
-                  </a>
-                  <a
-                    href="mailto:md@lyfetech.in"
-                    className="block text-slate-900 hover:text-amber-600 transition-colors"
-                  >
-                    md@lyfetech.in
-                  </a>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* MAP SECTION */}
-      <div className="w-full h-80 grayscale hover:grayscale-0 transition-all duration-700 border-t border-slate-300">
-        <iframe
-          title="LyfeTech Location"
-          src="https://www.google.com/maps?q=Ground+Floor,+Plot+No.+892/5984/5983,+Palasuni,+Rasulgarh,+Bhubaneswar,+Odisha+751025&output=embed"
-          className="w-full h-full"
-          loading="lazy"
-        />
-      </div>
-
-      {/* COPYRIGHT FOOTER */}
-      {/* ================= Enterprise Bottom Footer ================= */}
-      <div className="relative overflow-hidden border-t border-amber-500/30">
-        {/* Construction / Electrical Background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=80')",
-          }}
-        />
-
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-slate-950/90" />
-
-        {/* Blueprint Grid */}
-        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:50px_50px]" />
-
-        {/* Golden Glow */}
-        <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
-
-        <div className="relative max-w-7xl mx-auto px-6 py-1">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            {/* Left */}
-            <div className="text-center lg:text-left">
-              <h4 className="text-white font-bold tracking-wider uppercase text-lg">
+      {/* COPYRIGHT & ENTERPRISE FOOTER */}
+      <div className="relative overflow-hidden bg-slate-950 text-slate-400 border-t border-amber-500/20">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+            {/* Left Copyright Text */}
+            <div className="text-center lg:text-left space-y-1">
+              <h4 className="text-white font-bold tracking-wider uppercase text-sm">
                 LYFETECH Odisha Projects Pvt. Ltd.
               </h4>
-
-              <p className="text-slate-400 text-sm">
+              <p className="text-xs text-slate-400">
                 Delivering Excellence in Electrical & Civil Engineering Solutions Across India.
               </p>
-
-              <p className="mt-5 text-slate-500 text-sm">
-                © {new Date().getFullYear()} LYFETECH Odisha Projects Pvt. Ltd.
-                <br />
-                All Rights Reserved.
+              <p className="text-xs text-slate-500 pt-2">
+                © {new Date().getFullYear()} LYFETECH Odisha Projects Pvt. Ltd. All Rights Reserved.
               </p>
             </div>
 
-            {/* Center */}
-            <div className="hidden lg:block w-px h-20 bg-gradient-to-b from-transparent via-amber-500/50 to-transparent" />
-
-            {/* Right */}
-            <div className="flex flex-wrap justify-center gap-4 text-xs uppercase tracking-[0.2em] font-bold">
-              <Link
-                to="/privacy"
-                className="text-slate-400 hover:text-amber-400 transition-all duration-300 hover:-translate-y-1"
-              >
+            {/* Links */}
+            <div className="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-wider font-bold">
+              <Link to="/privacy" className="hover:text-amber-400 transition-colors">
                 Privacy Policy
               </Link>
-
-              <Link
-                to="/terms"
-                className="text-slate-400 hover:text-amber-400 transition-all duration-300 hover:-translate-y-1"
-              >
+              <Link to="/terms" className="hover:text-amber-400 transition-colors">
                 Terms & Conditions
               </Link>
-
-              <Link
-                to="/sitemap"
-                className="text-slate-400 hover:text-amber-400 transition-all duration-300 hover:-translate-y-1"
-              >
+              <Link to="/sitemap" className="hover:text-amber-400 transition-colors">
                 Sitemap
               </Link>
             </div>
           </div>
 
-          {/* Bottom Line */}
-          <div className=" border-t border-white/10 flex flex-col md:flex-row justify-center items-center gap-4">
-            <p className="text-l text-slate-400 text-center md:text-right ">
-              Designed & Developed by{" "}
-              <a
-                href="https://lyient.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-amber-400 hover:text-amber-300 transition-colors"
-              >
-                Lyient Solutions
-              </a>
-            </p>
+          {/* Developer Attribution Line */}
+          <div className="mt-6 border-t border-slate-800 pt-4 text-center text-xs text-slate-500">
+            Designed & Developed by{" "}
+            <a
+              href="https://lyient.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-amber-400 hover:text-amber-300 transition-colors"
+            >
+              Lyient Solutions
+            </a>
           </div>
         </div>
       </div>
 
-      {/* FLOATING BUTTONS */}
-      <div className="fixed bottom-6 right-4 lg:right-8 z-50 flex flex-col gap-3">
+      {/* FLOATING ACTION BUTTONS */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/9937219000"
+          href="https://wa.me/917855004500"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-500 text-white p-3 md:px-5 md:py-3 rounded-2xl shadow-xl flex items-center gap-3 hover:bg-green-600 transition-all hover:-translate-y-1 active:scale-95 group"
+          className="bg-emerald-500 text-white p-3 md:px-5 md:py-3 rounded-2xl shadow-xl flex items-center gap-2.5 hover:bg-emerald-600 transition-all hover:-translate-y-0.5 active:scale-95"
+          aria-label="WhatsApp Support"
         >
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-            alt="WA"
-            className="w-6 h-6"
+            alt="WhatsApp"
+            className="w-5 h-5"
           />
-          <span className="hidden md:block font-bold text-sm tracking-tight">Support</span>
+          <span className="hidden md:inline font-bold text-xs tracking-wide">Support</span>
         </a>
 
-        {/* Top Button */}
+        {/* Scroll To Top Button */}
         <button
           onClick={scrollToTop}
-          className="bg-white text-slate-9 00 p-3 md:px-5 md:py-3 rounded-2xl shadow-xl flex items-center gap-3 hover:bg-amber-500 hover:text-white transition-all hover:-translate-y-1 active:scale-95 group border border-slate-200"
+          className="bg-white text-slate-900 p-3 md:px-5 md:py-3 rounded-2xl shadow-xl flex items-center gap-2.5 hover:bg-amber-500 hover:text-white transition-all hover:-translate-y-0.5 active:scale-95 border border-slate-200"
+          aria-label="Back to top"
         >
-          <ArrowUp size={20} strokeWidth={3} />
-          <span className="hidden md:block font-extrabold text-sm tracking-tight">Top</span>
+          <ArrowUp size={18} strokeWidth={2.5} />
+          <span className="hidden md:inline font-bold text-xs tracking-wide">Top</span>
         </button>
       </div>
     </footer>
