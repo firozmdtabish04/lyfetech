@@ -23,8 +23,8 @@ const services = [
 
     desc: "Comprehensive EHT,HT & LT electrical infrastructure including power distribution, solar integration, and industrial automation.",
     details: [
-      "HT/LT Panel & Switchgear",
-      "Transformer Erection (Up to 220kV)",
+      "EHT,HT & LT Panel & Switchgear",
+      "Transformer Erection (Up to 220KV)",
       "Industrial Wiring & Cabling",
       "Earthing & Lightning Protection",
       "DG Set & Solar Installation",
@@ -39,7 +39,7 @@ const services = [
     icon: Cpu,
     title: "MV Installation Works",
 
-    desc: "End-to-end Medium Voltage solutions for power utilities and heavy industries, focusing on 11kV/33kV networks.",
+    desc: "End-to-end Medium Voltage solutions for power utilities and heavy industries, focusing on 11KV/33KV networks.",
     details: [
       "Substation Construction",
       "RMU & VCB Installation",

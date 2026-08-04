@@ -46,7 +46,7 @@ const projectsData = [
     image: p8,
     category: "Medium Voltage (MV) Installation Works",
     title: "1 MVA Compact Substation",
-    desc: "11kV/433V compact substation with transformer and RMU.",
+    desc: "11KV/433V compact substation with transformer and RMU.",
   },
   {
     image: p15,
@@ -63,7 +63,7 @@ const projectsData = [
   {
     image: p9,
     category: "Medium Voltage (MV) Installation Works",
-    title: "11kV RMU Installation",
+    title: "11KV RMU Installation",
     desc: "Ring Main Unit installation with safety protection systems.",
   },
 
