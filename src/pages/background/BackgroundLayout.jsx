@@ -18,7 +18,7 @@ export default function BackgroundLayout({ children }) {
         />
 
         {/* Ambient Glow */}
-        <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-amber-200/30 via-slate-200/30 to-blue-200/20 blur-[100px] sm:h-[380px] sm:w-[380px] md:h-[500px] md:w-[500px] lg:h-[650px] lg:w-[650px] xl:h-[750px] xl:w-[750px]" />
+        <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-amber-200/30 via-slate-200/30 to-blue-200/20 blur-[100px] sm:h-[380px] sm:w-[380px] md:h-[500px] md:w-[500px] lg:h-[650px] lg:w-[550px] xl:h-[750px] xl:w-[750px]" />
       </div>
 
       {/* ================= PAGE CONTENT ================= */}
@@ -41,7 +41,7 @@ export default function BackgroundLayout({ children }) {
               leading-none
               tracking-tight
               text-transparent
-              text-[clamp(3.5rem,18vw,18rem)]
+            text-[clamp(3rem,10vw,17rem)]
             "
             style={{
               WebkitTextStroke: "1px rgba(15,23,42,.05)",
@@ -59,7 +59,7 @@ export default function BackgroundLayout({ children }) {
               uppercase
               leading-none
               tracking-tight
-              text-[clamp(3.5rem,18vw,18rem)]
+          text-[clamp(3rem,10vw,17rem)]
               bg-gradient-to-br
               from-slate-900/20
               via-amber-900/5
