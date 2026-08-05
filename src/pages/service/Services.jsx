@@ -140,7 +140,7 @@ export default function ServicesSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Trust Bar */}
-        <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-20">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-20">
           {[
             {
               icon: BarChart3,
@@ -162,21 +162,31 @@ export default function ServicesSection() {
               key={i}
               className="
         group
-        flex items-center gap-4
-        px-7 py-5
+        w-full
+        max-w-[360px]
+        h-[110px]
+        sm:h-[120px]
+        flex items-center
+        gap-3 sm:gap-4
         rounded-2xl
         border border-amber-200/60
         bg-white
+        px-4 sm:px-6
         shadow-lg shadow-amber-100/40
-        hover:shadow-2xl hover:shadow-amber-200/50
-        hover:-translate-y-1
         transition-all duration-300
+        hover:-translate-y-1
+        hover:shadow-2xl hover:shadow-amber-200/50
       "
             >
               {/* Icon */}
               <div
                 className="
-          flex h-14 w-14 items-center justify-center
+          flex
+          h-12 w-12
+          sm:h-14 sm:w-14
+          shrink-0
+          items-center
+          justify-center
           rounded-xl
           bg-gradient-to-br
           from-amber-500
@@ -184,18 +194,20 @@ export default function ServicesSection() {
           to-orange-600
           text-white
           shadow-lg
-          group-hover:scale-110
           transition-transform
+          group-hover:scale-110
         "
               >
-                <stat.icon size={28} />
+                <stat.icon className="w-6 h-6 sm:w-7 sm:h-7" />
               </div>
 
               {/* Text */}
-              <div>
-                <h4 className="text-base font-bold text-slate-900">{stat.label}</h4>
+              <div className="min-w-0 flex-1">
+                <h4 className="font-bold text-slate-900 text-sm sm:text-base leading-tight break-words">
+                  {stat.label}
+                </h4>
 
-                <p className="mt-1 text-xs font-semibold tracking-[0.18em] uppercase text-amber-700">
+                <p className="mt-1 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-amber-700 break-all">
                   {stat.sub}
                 </p>
               </div>
