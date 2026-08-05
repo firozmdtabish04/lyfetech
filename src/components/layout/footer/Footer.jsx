@@ -247,7 +247,9 @@ export default function Footer() {
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/917855004500"
+          href={`https://wa.me/919937219000?text=${encodeURIComponent(
+            "Hello LYFETECH Team,\n\nI would like to know more about your services."
+          )}`}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-emerald-500 text-white p-3 md:px-5 md:py-3 rounded-2xl shadow-xl flex items-center gap-2.5 hover:bg-emerald-600 transition-all hover:-translate-y-0.5 active:scale-95"
@@ -258,7 +260,11 @@ export default function Footer() {
             alt="WhatsApp"
             className="w-5 h-5"
           />
-          <span className="hidden md:inline font-bold text-xs tracking-wide">Support</span>
+
+          <div className="hidden md:flex flex-col leading-none">
+            <span className="text-[10px] uppercase tracking-wider text-emerald-100">Chat with</span>
+            <span className="font-bold text-sm">LYFETECH</span>
+          </div>
         </a>
 
         {/* Scroll To Top Button */}
