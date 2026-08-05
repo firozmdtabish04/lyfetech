@@ -27,9 +27,26 @@ export default function BackgroundLayout({ children }) {
       {/* ================= WATERMARK ================= */}
       <div className="fixed inset-0 z-20 flex items-center justify-center overflow-hidden pointer-events-none px-4">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          initial={{
+            opacity: 0,
+            scale: 0.96,
+            y: 20,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: [0, -8, 0],
+          }}
+          transition={{
+            opacity: { duration: 1.2, ease: "easeOut" },
+            scale: { duration: 1.2, ease: "easeOut" },
+            y: {
+              duration: 8,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: "easeInOut",
+            },
+          }}
           className="relative text-center select-none"
         >
           {/* Outline Text */}
